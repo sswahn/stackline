@@ -23,6 +23,3 @@ npm run start
 - **React**: The powerhouse behind the UI magic.
 - **Redux**: For comfortable state management.
 - **Recharts**: Your companion for creating stunning charts.
-
-
-

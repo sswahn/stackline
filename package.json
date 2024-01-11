@@ -1,7 +1,7 @@
 {
   "name": "stackline",
   "version": "1.0.0",
-  "description": "",
+  "description": "Welcome to the Stackline Retail Data Visualization Challenge! This React project presents retail data in a dynamic and engaging way through a line chart and an interactive table.",
   "main": "index.js",
   "scripts": {
     "start": "http-server build",

@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          ref: main
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -24,12 +26,24 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Debugging Step
+        run: |
+          echo "Current directory: $(pwd)"
+          ls -al
+          ls -al build
+
+      - name: Checkout gh-pages Branch
+        run: |
+          git checkout gh-pages
+          git rm -rf .
+
+      - name: Copy Build Artifacts
+        run: cp -r build/* .
+
       - name: Commit and Push to gh-pages Branch
         run: |
           git config user.name "GitHub Actions"
-          git checkout --orphan gh-pages
-          git rm -rf .
-          cp -r build/* .
+          git config user.email "actions@example.com"
           git add .
           git commit -m "Build and deploy to GitHub Pages"
           git push origin gh-pages --force

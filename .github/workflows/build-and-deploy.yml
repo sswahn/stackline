@@ -3,7 +3,7 @@ name: Build and Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this to your main branch name
+      - main
 
 jobs:
   build-and-deploy:
@@ -32,9 +32,10 @@ jobs:
           ls -al
           ls -al build
 
-      - name: Checkout gh-pages Branch
+      - name: Check if gh-pages Branch Exists
         run: |
-          git checkout gh-pages
+          git fetch origin gh-pages:gh-pages || true
+          git checkout gh-pages || git checkout --orphan gh-pages
           git rm -rf .
 
       - name: Copy Build Artifacts

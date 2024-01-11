@@ -34,6 +34,7 @@ jobs:
           git rm -rf .
           cp -r build/* .
           git add .
+          git reset -- node_modules package-lock.json
           git commit -m "Build and deploy to GitHub Pages"
           git push origin gh-pages --force
         env:

@@ -20,6 +20,6 @@ npm run start
 ```
 
 ## 🛠️ Technologies
-React: The powerhouse behind the UI magic.
-Redux: For comfortable state management.
-Recharts: Your companion for creating stunning charts.
+- **React**: The powerhouse behind the UI magic.
+- **Redux**: For comfortable state management.
+- **Recharts**: Your companion for creating stunning charts.

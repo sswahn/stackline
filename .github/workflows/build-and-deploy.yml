@@ -41,5 +41,5 @@ jobs:
           git commit -m "Build and deploy to GitHub Pages"
           git push origin gh-pages --force
         env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_TOKEN: ${{ secrets.STACKLINE_TOKEN }}
           

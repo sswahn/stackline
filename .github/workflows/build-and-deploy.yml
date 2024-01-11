@@ -14,7 +14,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: main
-          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,8 +26,11 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Checkout gh-pages Branch
-        run: git checkout gh-pages
+      - name: Check if gh-pages Branch Exists
+        run: |
+          git fetch origin gh-pages:gh-pages || true
+          git checkout gh-pages || git checkout --orphan gh-pages
+          git rm -rf .
 
       - name: Copy Build Artifacts
         run: cp -r build/* .
@@ -42,4 +44,3 @@ jobs:
           git push origin gh-pages --force
         env:
           GH_TOKEN: ${{ secrets.STACKLINE_TOKEN }}
-          

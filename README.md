@@ -1,6 +1,6 @@
 # 📊 Stackline · Retail Data Visualization Challenge
 
-Welcome to the Retail Data Visualization Challenge! This React project presents retail data in a dynamic and engaging way through a line chart and an interactive table.
+Welcome to the Stackline Retail Data Visualization Challenge! This React project presents retail data in a dynamic and engaging way through a line chart and an interactive table.
 
 ## ✨ Features
 - Line Chart: Visualize retail data trends with an intuitive line chart.

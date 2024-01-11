@@ -1,0 +1,240 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #F6F8FA;
+}
+
+.banner {
+  background-color: #052849;
+  height: 75px;
+  padding: 20px 0 0 20px;
+  width: 100%;
+}
+
+.banner img {
+  width: 150px;
+}
+
+.retail-sales {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  padding: 0 18px;
+}
+
+.panel {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.05);
+}
+
+.sidebar {
+  margin-right: 18px;
+  max-width: 325px;
+}
+
+.sidebar header {
+  margin-bottom: 18px;
+  padding-top: 18px;
+  text-align: center
+}
+
+.sidebar header img {
+  margin: 0 auto;
+  width: 150px;
+}
+
+.sidebar header h2 {
+  color: #5F6F85;
+  font-size: 17px;
+  margin: 10px 0 5px 0;
+}
+
+.sidebar header p {
+  color: #ABB8C8;
+  font-size: 13px;
+  line-height: 20px;
+  margin: 0 auto;
+  max-width: 220px;
+}
+
+.sidebar nav {
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.sidebar nav button {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  color: #5F6F85;
+  margin: 5px;
+  padding: 3px 20px;
+  cursor: pointer;
+}
+
+.retail-sales > div {
+  flex: 1;
+}
+
+.retail-chart {
+  margin-bottom: 75px;
+  position: relative;
+  padding-bottom: 15px;
+  width: 100%;
+}
+
+.retail-chart h3 {
+  color: #5F6F85;
+  font-weight: lighter;
+  padding: 22px 0 0 22px;
+}
+
+
+
+
+.dropdown {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+}
+
+.dropdown button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  padding: 0 10px;
+}
+
+.dropdown menu {
+  border: 1px solid #eee;
+  list-style-type: none;
+  padding-left: 0;
+  width: 170px;
+  margin: 0 0 -111px -165px;
+  z-index: 2147483647;
+}
+
+.dropdown-open {
+  display: block;
+}
+
+.dropdown-closed {
+  display: none;
+}
+
+.dropdown li {
+  border-top: 1px solid #eee;
+  color: #5F6F85;
+  cursor: pointer;
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.dropdown li:first-child {
+  border-top: 0;
+}
+
+
+
+.retail-table {
+  height: 520px;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+.retail-table:hover {
+  overflow: scroll;
+}
+
+.retail-table table {
+  border-collapse: collapse;
+  height: 520px;
+  overflow-y: scroll;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.retail-table thead tr th {
+  align-items: center;
+  color: #5F6F85;
+  font-size: 13px;
+  font-weight: normal;
+  text-transform: uppercase;
+  vertical-align: middle;
+}
+
+.retail-table thead tr th svg {
+  vertical-align: middle;
+}
+
+.retail-table tbody tr {
+  border-top: 1px solid #eee;
+}
+
+.retail-table thead th {
+  padding: 25px 0;
+  cursor: pointer;
+}
+
+.retail-table td {
+  color: #ABB8C8;
+  font-size: 14px;
+  padding: 15px 0;
+}
+
+.retail-table th:first-child,
+.retail-table td:first-child {
+  padding-left: 30px;
+  text-align: left;
+}
+
+.retail-table th:not(:first-child):not(:last-child),
+.retail-table td:not(:first-child):not(:last-child) {
+  text-align: center;
+}
+
+.retail-table th:last-child {
+  padding-right: 30px;
+  text-align: right;
+}
+
+.retail-table td:last-child {
+  padding-right: 52px;
+  text-align: right;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+}
+
+.footer small {
+  color: #ABB8C8;
+  display: block;
+  padding: 30px 0;
+}
+
+.footer a {
+  color: #ABB8C8;
+}

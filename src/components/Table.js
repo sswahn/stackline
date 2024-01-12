@@ -6,7 +6,7 @@ import Caret from './Caret'
 
 const Table = ({ data }) => {
   const [state, setState] = useState([])
-  const [key, setKey] = useState('weekEnding')
+  const [key, setKey] = useState(undefined)
   const [isDescending, setIsDescending] = useState(true)
 
   const formatData = array => {
@@ -29,7 +29,7 @@ const Table = ({ data }) => {
 
   const handleSort = event => {
     const currentKey = event.currentTarget.dataset.id
-    const descending = currentKey === key ? !isDescending : true
+    const descending = currentKey === key ? !isDescending : false
     const sorted = sortData(currentKey, descending)
     const formatted = formatData(sorted)
     setState(formatted)

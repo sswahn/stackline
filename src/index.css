@@ -114,6 +114,10 @@ body {
   z-index: 0;
 }
 
+.recharts-cartesian-axis {
+  border: 1px dashed red;
+}
+
 .dropdown {
   position: absolute;
   right: 15px;
@@ -203,7 +207,7 @@ body {
   text-align: right;
   text-transform: uppercase;
   vertical-align: middle;
-  width: 200px;
+  width: 150px;
 
   border: 1px dashed red;
 }
@@ -211,7 +215,7 @@ body {
 .retail-table td {
   padding-right: 52px;
   text-align: right;
-  width: 200px;
+  width: 150px;
 
   border: 1px dashed red;
 }

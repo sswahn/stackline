@@ -88,6 +88,9 @@ const LineChartComponent = ({ data }) => {
           />
         </LineChart>
       </ResponsiveContainer>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        {uniqueMonths.map(item => <span>{item}</span>)}
+      </div>
     </div>
   )
 }

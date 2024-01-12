@@ -21,11 +21,9 @@ const Table = ({ data }) => {
 
   const sortData = id => {
     return [...data].sort((a, b) => {
-      const aVal = a[id]
-      const bVal = b[id]
-      return isDescending 
-        ? bVal - aVal 
-        : aVal - bVal
+      const aVal = id === 'weekEnding' ? new Date(a[id]) : a[id]
+      const bVal = id === 'weekEnding' ? new Date(b[id]) : b[id]
+      return isDescending ? bVal - aVal : aVal - bVal
     })
   }
 

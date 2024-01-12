@@ -9,15 +9,8 @@ Welcome to the Stackline Retail Data Visualization Challenge! This React project
 - Table Sorting: Sort the table by various columns for a customized experience.
 
 ## 🚀 Getting Started
-Clone the repository and dive into the world of retail data:
-
-```bash
-git clone https://github.com/sswahn/stackline.git
-cd stackline
-npm install
-npm run build
-npm run start
-```
+Visit the app and dive into the world of retail data:
+[https://sswahn.github.io/stackline/](https://sswahn.github.io/stackline/)
 
 ## 🛠️ Technologies
 - **React**: The powerhouse behind the UI magic.

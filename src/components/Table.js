@@ -37,7 +37,7 @@ const Table = ({ data }) => {
 
   const handleSort = event => {
     const currentKey = getKey(event.target.firstChild.textContent)
-    const descending = currentKey === key && !isDescending
+    const descending = currentKey === key ? !isDescending : true
     const sorted = [...data].sort((a, b) => {
       const aValue = currentKey === 'weekEnding' ? Number(a[currentKey].split('-')[1]) : a[currentKey]
       const bValue = currentKey === 'weekEnding' ? Number(b[currentKey].split('-')[1]) : b[currentKey]

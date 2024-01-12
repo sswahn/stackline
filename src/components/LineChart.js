@@ -49,22 +49,22 @@ const LineChartComponent = ({ data }) => {
   }, [data])
    
   return (
-    <section className="retail-chart panel" aria-label="Retail Sales Chart">
+    <section className="retail-chart panel">
       <h3>Retail Sales</h3>
       <Dropdown onClick={handleDropdown} selected={showSales} />
-      <ResponsiveContainer width="100%" height={460}>
-        <LineChart data={data} aria-label="Sales Data Chart">
-          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} x1="10%" x2="50%" aria-label="Retail Sales Line" />
-          {showSales.wholesale && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} aria-label="Wholesale Sales Line" />}
-          {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} aria-label="Units Sold Line" />}
-          {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} aria-label="Retailer Margin Line" />}
-          <YAxis hide={true} domain={[adjustedMinValue, adjustedMaxValue]} aria-hidden="true" />
-          <XAxis hide={true} padding={{ left: 35, right: 35 }} aria-hidden="true" />
+      <ResponsiveContainer height={460}>
+        <LineChart data={data}>
+          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} />
+          {showSales.wholesale && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} />}
+          {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} />}
+          {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} />}
+          <YAxis hide={true} domain={[adjustedMinValue, adjustedMaxValue]} />
+          <XAxis hide={true} padding={{ left: 35, right: 35 }} />
         </LineChart>
       </ResponsiveContainer>
       <div className="months">
-        <div role="list" aria-label="Months">
-          {months.map(month => <span key={month} role="listitem">{month}</span>)}
+        <div>
+          {months.map(month => <span key={month}>{month}</span>)}
         </div>
       </div>
     </section>

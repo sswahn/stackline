@@ -48,26 +48,12 @@ const Table = ({ data }) => {
       <table>
         <thead>
           <tr>
-            <th data-id="weekEnding" onClick={handleSort}>
-              <span>Week Ending</span>
-              <Caret id="weekEnding" key={key} direction={isDescending} />
-            </th>
-            <th data-id="retailSales" onClick={handleSort}>
-              <span>Retail Sales</span>
-              <Caret direction={key === 'retailSales' ? isDescending : true} />
-            </th>
-            <th data-id="wholesaleSales" onClick={handleSort}>
-              <span>Wholesale Sales</span>
-              <Caret direction={key === 'wholesaleSales' ? isDescending : true} />
-            </th>
-            <th data-id="unitsSold" onClick={handleSort}>
-              <span>Units Sold</span>
-              <Caret direction={key === 'unitsSold' ? isDescending : true} />
-            </th>
-            <th data-id="retailerMargin" onClick={handleSort}>
-              <span>Retailer Margin</span>
-              <Caret direction={key === 'retailerMargin' ? isDescending : true} />
-            </th>
+            {Object.keys(data[0]).map(item => (
+              <th key={item} data-id={item} onClick={handleSort}>
+                <span>{item.replace(/([A-Z])/g, ' $1')}</span>
+                <Caret id={item} key={key} direction={isDescending} />
+              </th>
+            ))}
           </tr>
         </thead>
         <tbody>

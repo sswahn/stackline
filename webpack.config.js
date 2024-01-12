@@ -43,7 +43,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(process.cwd(), 'public', 'index.html'),
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'main.css',
+    }),
     new webpack.ProvidePlugin({
       React: 'react',
     }),

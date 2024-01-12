@@ -216,6 +216,10 @@ body {
   z-index: 1;
 }
 
+.retail-table th span {
+  margin-right: 5px;
+}
+
 .retail-table td {
   color: #ABB8C8;
   font-size: 14px;

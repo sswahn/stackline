@@ -218,7 +218,13 @@ body {
 }
 
 .retail-table th::after {
+  content: "";
+  display: block;
   border-bottom: 1px solid #eee;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .retail-table th span {

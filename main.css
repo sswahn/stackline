@@ -200,6 +200,10 @@ body {
   border-top: 1px solid #eee;
 }
 
+.retail-table tbody tr:first-child {
+  border-top: 0;
+}
+
 .retail-table th {
   align-items: center;
   background-color: white;
@@ -218,12 +222,6 @@ body {
   border-bottom: 1px solid #eee !important;
 }
 
-.retail-table th:first-child {
-  padding-left: 30px;
-  text-align: left;
-  width: 170px !important;
-}
-
 .retail-table th span {
   margin-right: 5px;
 }
@@ -235,8 +233,8 @@ body {
   text-align: right;
 }
 
+.retail-table th:first-child,
 .retail-table td:first-child {
-  border-top: 0 !important;
   padding-left: 30px;
   text-align: left;
   width: 170px !important;

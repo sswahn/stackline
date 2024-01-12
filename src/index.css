@@ -246,3 +246,15 @@ body {
 .footer a {
   color: #ABB8C8;
 }
+
+
+@media screen and (max-width: 600px) {
+  .retail-sales {
+    display: block;
+  }
+
+  .sidebar {
+    max-width: 100%;
+  }
+}
+

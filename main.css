@@ -218,7 +218,9 @@ body {
   top: 0;
   vertical-align: middle;
   z-index: 1;
+}
 
+.retail-table th::after {
   border-bottom: 1px solid #eee;
 }
 

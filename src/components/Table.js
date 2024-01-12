@@ -6,7 +6,7 @@ import CaretUpIcon from '../icons/CaretUpIcon'
 const Table = ({ data }) => {
   const [state, setState] = useState([])
   const [key, setKey] = useState(null)
-  const [isDescending, setIsDescending] = useState(true)
+  const [isDescending, setIsDescending] = useState(false)
 
   const getKey = text => {
     switch (text) {

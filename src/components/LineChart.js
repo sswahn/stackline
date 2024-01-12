@@ -80,7 +80,7 @@ const LineChartComponent = ({ data }) => {
           {showSales.wholesale && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={3} dot={false} />}
           {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={3} dot={false} />}
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={3} dot={false} />}
-          <XAxis padding={{ left: 35, right: 35 }} />
+          <XAxis hide={true} padding={{ left: 35, right: 35 }} />
          {/* <line x1="0%" y1="90%" x2="100%" y2="90%" stroke="#eeeeee" strokeWidth="1" />
              <XAxis 
             dataKey="weekEnding" 

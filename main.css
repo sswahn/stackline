@@ -196,14 +196,16 @@ body {
   vertical-align: middle;
 }
 
+.retail-table thead tr {
+  border-bottom: 1px solid #eee;
+}
+
 .retail-table tbody tr {
   border-top: 1px solid #eee;
 }
 
-.retail-table td {
-  color: #ABB8C8;
-  font-size: 14px;
-  padding: 15px 0;
+.retail-table tbody tr:first-child {
+  border: 0;
 }
 
 .retail-table th {
@@ -223,7 +225,9 @@ body {
 }
 
 .retail-table td {
-  padding-right: 52px;
+  color: #ABB8C8;
+  font-size: 14px;
+  padding: 15px 52px 15px 0;
   text-align: right;
 }
 

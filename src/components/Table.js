@@ -6,7 +6,7 @@ import CaretUpIcon from '../icons/CaretUpIcon'
 const Table = ({ data }) => {
   const [state, setState] = useState([])
   const [key, setKey] = useState(null)
-  const [isDescending, setIsDescending] = useState(false)
+  const [isDescending, setIsDescending] = useState(true)
 
   const getKey = text => {
     switch (text) {
@@ -69,23 +69,23 @@ const Table = ({ data }) => {
           <tr>
             <th onClick={handleSort}>
               <span>Week Ending</span>
-              {key === 'weekEnding' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
+              {key === 'weekEnding' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />)}
             </th>
             <th onClick={handleSort}>
               <span>Retail Sales</span>
-              {key === 'retailSales' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
+              {key === 'retailSales' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />)}
             </th>
             <th onClick={handleSort}>
               <span>Wholesale Sales</span>
-              {key === 'wholesaleSales' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
+              {key === 'wholesaleSales' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />)}
             </th>
             <th onClick={handleSort}>
               <span>Units Sold</span>
-              {key === 'unitsSold' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
+              {key === 'unitsSold' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />)}
             </th>
             <th onClick={handleSort}>
               <span>Retailer Margin</span>
-              {key === 'retailerMargin' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
+              {key === 'retailerMargin' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />)}
             </th>
           </tr>
         </thead>

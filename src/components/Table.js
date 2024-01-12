@@ -42,8 +42,8 @@ const Table = ({ data }) => {
     setState(init)
   }
 
-  const handleScroll = () => {
-    const offset = document.getElementById('table').scrollTop
+  const handleScroll = event => {
+    const offset = event.target.scrollTop
     setIsSticky(offset > 0)
   }
 
@@ -52,12 +52,12 @@ const Table = ({ data }) => {
   }, [data])
 
   return (
-    <section id="table" className={`retail-table panel ${isSticky ? 'sticky-header' : ''}`}>
-      <table>
+    <section className="retail-table panel" onScroll={handleTableScroll}>
+      <table id="table">
         <thead>
           <tr>
             {!!state.length && Object.keys(state[0]).map(item => (
-              <th key={item} data-id={item} onClick={handleSort}>
+              <th key={item} data-id={item} className={isSticky ? 'sticky-header' : ''} onClick={handleSort}>
                 <span>{item.replace(/([A-Z])/g, ' $1')}</span>
                 <Caret id={item} sortKey={sortKey} isDescending={isDescending} />
               </th>

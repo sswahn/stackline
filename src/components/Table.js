@@ -8,7 +8,6 @@ const Table = ({ data }) => {
   const [state, setState] = useState([])
   const [sortKey, setSortKey] = useState(undefined)
   const [isDescending, setIsDescending] = useState(true)
-  const [isSticky, setIsSticky] = useState(false)
 
   const formatData = array => {
     return array.map((item) => ({
@@ -37,27 +36,17 @@ const Table = ({ data }) => {
     setSortKey(id)
   }
 
-  const initializeState = () => {
-    const init = formatData(data)
-    setState(init)
-  }
-
-  const handleTableScroll = event => {
-    const offset = event.target.scrollTop
-    setIsSticky(offset > 0)
-  }
-
   useEffect(() => {
-    initializeState()
+    setState(formatData(data))
   }, [data])
 
   return (
-    <section className="retail-table panel" onScroll={handleTableScroll}>
-      <table id="table">
+    <section className="retail-table panel">
+      <table>
         <thead>
           <tr>
             {!!state.length && Object.keys(state[0]).map(item => (
-              <th key={item} data-id={item} className={isSticky ? 'sticky-header' : ''} onClick={handleSort}>
+              <th key={item} data-id={item} onClick={handleSort}>
                 <span>{item.replace(/([A-Z])/g, ' $1')}</span>
                 <Caret id={item} sortKey={sortKey} isDescending={isDescending} />
               </th>

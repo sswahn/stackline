@@ -107,6 +107,18 @@ body {
   padding: 22px 0 0 22px;
 }
 
+.retail-chart .months {
+  border-top: 1px solid #eee;
+  padding: 40px 0;
+}
+
+.retail-chart .months div {
+  color: #ABB8C8;
+  display: flex; 
+  justify-content: space-between; 
+  padding: 0 35px;
+}
+
 .recharts-responsive-container,
 .recharts-wrapper,
 .recharts-surface,

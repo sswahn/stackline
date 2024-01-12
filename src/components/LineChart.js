@@ -83,7 +83,8 @@ const LineChartComponent = ({ data }) => {
             ticks={uniqueMonths} 
             tick={{ fill: '#ABB8C8', fontSize: '14px' }}
             dx={-5} 
-            padding={{ left: 35 }} 
+            padding={{ left: 35, right: 35 }} 
+            interval={1}
           />
         </LineChart>
       </ResponsiveContainer>

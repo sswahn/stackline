@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react'
 import { formatTableDate } from '../utilities/formatDate'
-import CaretDownIcon from '../icons/CaretDownIcon'
-import CaretUpIcon from '../icons/CaretUpIcon'
 import Caret from './Caret'
 
 const Table = ({ data }) => {

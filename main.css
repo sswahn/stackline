@@ -69,7 +69,7 @@ body {
 }
 
 .sidebar header p {
-  color: #C0C8D3;
+  color: #ABB8C8;
   font-size: 13px;
   line-height: 20px;
   margin: 0 auto;
@@ -115,7 +115,7 @@ body {
 }
 
 .retail-chart .months div {
-  color: #C0C8D3;
+  color: #ABB8C8;
   display: flex; 
   font-size: 14px;
   justify-content: space-between; 
@@ -201,7 +201,7 @@ body {
 }
 
 .retail-table td {
-  color: #C0C8D3;
+  color: #ABB8C8;
   font-size: 14px;
   padding: 15px 0;
 }
@@ -245,12 +245,12 @@ body {
 }
 
 .footer small {
-  color: #C0C8D3;
+  color: #ABB8C8;
   display: block;
   padding: 30px 0;
 }
 
 .footer a {
-  color: #C0C8D3;
+  color: #ABB8C8;
 }
 

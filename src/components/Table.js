@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { formatTableDate } from '../utilities/formatDate'
 import CaretDownIcon from '../icons/CaretDownIcon'
 import CaretUpIcon from '../icons/CaretUpIcon'
+import Caret from './Caret'
 
 const Table = ({ data }) => {
   const [state, setState] = useState([])
@@ -52,7 +53,7 @@ const Table = ({ data }) => {
           <tr>
             <th data-id="weekEnding" onClick={handleSort}>
               <span>Week Ending</span>
-              {key === 'weekEnding' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
+              {key === 'weekEnding' && <Caret direction={isDecending ? 'down' : 'up'} />}
             </th>
             <th data-id="retailSales" onClick={handleSort}>
               <span>Retail Sales</span>

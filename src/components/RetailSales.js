@@ -8,12 +8,7 @@ const RetailSales = () => {
 
   return (
     <div className="retail-sales">
-      <Sidebar 
-        title={title} 
-        image={image} 
-        subtitle={subtitle} 
-        tags={tags}
-      />
+      <Sidebar title={title} image={image} subtitle={subtitle} tags={tags} />
       <div>
         <LineChart data={sales} /> 
         <Table data={sales} />

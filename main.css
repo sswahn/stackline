@@ -185,26 +185,12 @@ body {
   width: 100%;
 }
 
-.retail-table thead tr th {
-  align-items: center;
-  color: #5F6F85;
-  font-size: 13px;
-  font-weight: normal;
-  text-transform: uppercase;
-  vertical-align: middle;
-}
-
 .retail-table thead tr th svg {
   vertical-align: middle;
 }
 
 .retail-table tbody tr {
   border-top: 1px solid #eee;
-}
-
-.retail-table thead th {
-  padding: 25px 0;
-  cursor: pointer;
 }
 
 .retail-table td {
@@ -214,8 +200,15 @@ body {
 }
 
 .retail-table th {
-  padding-right: 30px;
+  align-items: center;
+  color: #5F6F85;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: normal;
+  padding: 25px 30px 25px 0;
   text-align: right;
+  text-transform: uppercase;
+  vertical-align: middle;
 }
 
 .retail-table td {

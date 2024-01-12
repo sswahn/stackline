@@ -114,7 +114,10 @@ body {
   z-index: 0;
 }
 
-.recharts-layer {
+.recharts-layer, 
+.recharts-cartesian-axis, 
+.recharts-xAxis, 
+.xAxis {
   border: 1px dashed red;
 }
 
@@ -164,8 +167,6 @@ body {
   border-top: 0;
 }
 
-
-
 .retail-table {
   height: 520px;
   overflow-y: hidden;
@@ -201,21 +202,17 @@ body {
   align-items: center;
   color: #5F6F85;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: normal;
   padding: 25px 30px 25px 0;
   text-align: right;
   text-transform: uppercase;
   vertical-align: middle;
-
-  border: 1px dashed red;
 }
 
 .retail-table td {
   padding-right: 52px;
   text-align: right;
-
-  border: 1px dashed red;
 }
 
 .retail-table th:first-child,

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts'
-import { formatChartDate } from '../utilities/formatDate'
 import Dropdown from './Dropdown'
 
 const months = [

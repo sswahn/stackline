@@ -8,6 +8,7 @@ const Table = ({ data }) => {
   const [state, setState] = useState([])
   const [sortKey, setSortKey] = useState(undefined)
   const [isDescending, setIsDescending] = useState(true)
+  const [isSticky, setIsSticky] = useState(false)
 
   const formatData = array => {
     return array.map((item) => ({
@@ -41,12 +42,17 @@ const Table = ({ data }) => {
     setState(init)
   }
 
+  const handleScroll = () => {
+    const offset = document.getElementById('table').scrollTop
+    setIsSticky(offset > 0)
+  }
+
   useEffect(() => {
     initializeState()
   }, [data])
 
   return (
-    <section className="retail-table panel">
+    <section id="table" className={`retail-table panel ${isSticky ? 'sticky-header' : ''}`}>
       <table>
         <thead>
           <tr>

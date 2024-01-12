@@ -6,7 +6,7 @@ import Caret from './Caret'
 
 const Table = ({ data }) => {
   const [state, setState] = useState([])
-  const [key, setKey] = useState(undefined)
+  const [sortKey, setSortKey] = useState(undefined)
   const [isDescending, setIsDescending] = useState(true)
 
   const formatData = array => {
@@ -21,7 +21,11 @@ const Table = ({ data }) => {
 
   const sortData = id => {
     return [...data].sort((a, b) => {
-      return isDescending ? b - a : a - b
+      const aVal = a[id]
+      const bVal = b[id]
+      return isDescending 
+        ? bVal - aVal 
+        : aVal - bVal
     })
   }
 
@@ -31,7 +35,7 @@ const Table = ({ data }) => {
     const formatted = formatData(sorted)
     setIsDescending(prevState => !prevState)
     setState(formatted)
-    setKey(id)
+    setSortKey(id)
   }
 
   const initializeState = () => {
@@ -51,7 +55,7 @@ const Table = ({ data }) => {
             {!!state.length && Object.keys(state[0]).map(item => (
               <th key={item} data-id={item} onClick={handleSort}>
                 <span>{item.replace(/([A-Z])/g, ' $1')}</span>
-                <Caret id={item} key={key} direction={isDescending} />
+                <Caret id={item} sortKey={sortKey} isDescending={isDescending} />
               </th>
             ))}
           </tr>

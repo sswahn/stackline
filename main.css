@@ -117,8 +117,6 @@ body {
   z-index: 0;
 }
 
-
-
 .dropdown {
   position: absolute;
   right: 15px;
@@ -184,7 +182,7 @@ body {
   width: 100%;
 }
 
-.retail-table thead tr th svg {
+.retail-table svg {
   vertical-align: middle;
 }
 
@@ -208,11 +206,15 @@ body {
   text-align: right;
   text-transform: uppercase;
   vertical-align: middle;
+
+  border: 1px dashed red;
 }
 
 .retail-table td {
   padding-right: 52px;
   text-align: right;
+
+  border: 1px dashed red;
 }
 
 .retail-table th:first-child,

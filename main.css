@@ -201,7 +201,7 @@ body {
 }
 
 .retail-table tbody tr:first-child {
-  border-top: 0;
+  border-top: 0 !important;
 }
 
 .retail-table th {
@@ -218,8 +218,6 @@ body {
   top: 0;
   vertical-align: middle;
   z-index: 1;
-
-  border-bottom: 1px solid #eee !important;
 }
 
 .retail-table th span {

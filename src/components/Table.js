@@ -10,7 +10,7 @@ const Table = ({ data }) => {
   const [isDescending, setIsDescending] = useState(true)
 
   const formatData = array => {
-    return array.map((item) => ({
+    return array.map(item => ({
       weekEnding: formatTableDate(item.weekEnding),
       retailSales: `$${parseInt(item.retailSales, 10).toLocaleString()}`,
       wholesaleSales: `$${parseInt(item.wholesaleSales, 10).toLocaleString()}`,

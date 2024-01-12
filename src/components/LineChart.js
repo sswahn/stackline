@@ -57,15 +57,15 @@ const LineChartComponent = ({ data }) => {
         <LineChart data={data} aria-label="Sales Data Chart">
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} x1="10%" x2="50%" aria-label="Retail Sales Line" />
           {showSales.wholesale && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} aria-label="Wholesale Sales Line" />}
-          {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} />}
-          {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} />}
+          {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} aria-label="Units Sold Line" />}
+          {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} aria-label="Retailer Margin Line" />}
           <YAxis hide={true} domain={[adjustedMinValue, adjustedMaxValue]} aria-hidden="true" />
           <XAxis hide={true} padding={{ left: 35, right: 35 }} aria-hidden="true" />
         </LineChart>
       </ResponsiveContainer>
       <div className="months">
         <div role="list" aria-label="Months">
-          {months.map(item => <span role="listitem">{item}</span>)}
+          {months.map(month => <span key={month} role="listitem">{month}</span>)}
         </div>
       </div>
     </section>

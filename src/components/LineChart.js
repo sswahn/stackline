@@ -16,21 +16,8 @@ const LineChartComponent = ({ data }) => {
     retailerMargin: false
   })
   
-  const getType = text => {
-    switch (text) {
-      case 'Wholesale Sales':
-        return 'wholesale'
-      case 'Units Sold':
-        return 'unitsSold'
-      case 'Retailer Margin':
-        return 'retailerMargin'
-      default:
-        return null
-    }
-  }
-  
   const handleDropdown = event => {
-    const type = getType(event.currentTarget.lastChild.textContent)
+    const type = event.currentTarget.id
     setShowSales(prevState => ({ ...prevState, [type]: !prevState[type] }))
   }
 

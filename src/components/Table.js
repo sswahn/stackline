@@ -48,7 +48,7 @@ const Table = ({ data }) => {
       <table>
         <thead>
           <tr>
-            {Object.keys(data[0]).map(item => (
+            {!!state.length && Object.keys(state[0]).map(item => (
               <th key={item} data-id={item} onClick={handleSort}>
                 <span>{item.replace(/([A-Z])/g, ' $1')}</span>
                 <Caret id={item} key={key} direction={isDescending} />

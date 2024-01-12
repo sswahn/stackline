@@ -181,7 +181,6 @@ body {
   border-collapse: collapse;
   height: 520px;
   overflow-y: scroll;
-  table-layout: fixed;
   width: 100%;
 }
 

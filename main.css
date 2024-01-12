@@ -214,6 +214,14 @@ body {
   top: 0;
   vertical-align: middle;
   z-index: 1;
+
+  border-bottom: 1px solid #eee !important;
+}
+
+.retail-table th:first-child {
+  padding-left: 30px;
+  text-align: left;
+  width: 170px !important;
 }
 
 .retail-table th span {
@@ -227,9 +235,8 @@ body {
   text-align: right;
 }
 
-.retail-table th:first-child,
 .retail-table td:first-child {
-  padding-left: 30px;
+  border-top: 0 !important;
   text-align: left;
   width: 170px !important;
 }

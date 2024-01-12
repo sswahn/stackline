@@ -53,7 +53,7 @@ const Table = ({ data }) => {
           <tr>
             <th data-id="weekEnding" onClick={handleSort}>
               <span>Week Ending</span>
-              <Caret direction={key === 'weekEnding' && (isDescending ? 'down' : 'up')} />
+              <Caret direction={key === 'weekEnding' ? (isDescending ? 'down' : 'up') : 'down'} />
             </th>
             <th data-id="retailSales" onClick={handleSort}>
               <span>Retail Sales</span>

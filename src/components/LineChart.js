@@ -9,7 +9,6 @@ const months = [
 
 const LineChartComponent = ({ data }) => {
   const [state, setState] = useState([])
-  //const [uniqueMonths, setUniqueMonths] = useState([])
   const [adjustedMinValue, setAdjustedMinValue] = useState([])
   const [adjustedMaxValue, setAdjustedMaxValue] = useState([])
   const [showSales, setShowSales] = useState({
@@ -35,17 +34,6 @@ const LineChartComponent = ({ data }) => {
     const type = getType(event.currentTarget.lastChild.textContent)
     setShowSales(prevState => ({ ...prevState, [type]: !prevState[type] }))
   }
- /* 
-  const formatData = array => {
-    return array.map(item => ({ 
-      weekEnding: formatChartDate(item.weekEnding),
-      retailSales: item.retailSales,
-      wholesaleSales: item.wholesaleSales,
-      unitsSold: item.unitsSold,
-      retailerMargin: item.retailerMargin
-    }))
-  }
-  */
 
   const adjustYAxisHeight = () => {
     const min = Math.min(...data.map(item => item.retailSales))
@@ -57,16 +45,8 @@ const LineChartComponent = ({ data }) => {
     setAdjustedMaxValue(maxValue)
   }
 
-  const initializeState = () => {
-    //const init = formatData(data)
-    //const months = [...new Set(init.map(item => item.weekEnding))]
-    //setState(init)
-    //setUniqueMonths(months)
-    adjustYAxisHeight()
-  }
-
   useEffect(() => {
-    initializeState()
+    adjustYAxisHeight()
   }, [data])
    
   return (
@@ -81,20 +61,10 @@ const LineChartComponent = ({ data }) => {
           {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={3} dot={false} />}
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={3} dot={false} />}
           <XAxis hide={true} padding={{ left: 35, right: 35 }} />
-         {/* <line x1="0%" y1="90%" x2="100%" y2="90%" stroke="#eeeeee" strokeWidth="1" />
-             <XAxis 
-            dataKey="weekEnding" 
-            axisLine={false} 
-            tickLine={false} 
-            ticks={uniqueMonths} 
-            tick={{ fill: '#ABB8C8', fontSize: '14px' }}
-            dx={-5} 
-            padding={{ left: 35, right: 35 }} 
-          /> */}
         </LineChart>
       </ResponsiveContainer>
-      <div style={{ borderTop: '1px solid #eee' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', padding: '15px 35px 0 35px' }}>
+      <div className="months">
+        <div>
           {months.map(item => <span>{item}</span>)}
         </div>
       </div>

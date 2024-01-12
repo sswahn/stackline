@@ -203,7 +203,7 @@ body {
   text-align: right;
   text-transform: uppercase;
   vertical-align: middle;
-  width: 100px;
+  width: 200px;
 
   border: 1px dashed red;
 }
@@ -211,7 +211,7 @@ body {
 .retail-table td {
   padding-right: 52px;
   text-align: right;
-  width: 100px;
+  width: 200px;
 
   border: 1px dashed red;
 }

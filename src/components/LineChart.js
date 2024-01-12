@@ -85,6 +85,8 @@ const LineChartComponent = ({ data }) => {
             dx={-5} 
             padding={{ left: 35, right: 35 }} 
             style={{
+              display: 'flex',
+              justifyContent: 'space-berween',
               border: '1px dashed red'
           }}/>
         </LineChart>

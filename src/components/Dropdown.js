@@ -31,15 +31,15 @@ const Dropdown = ({ onClick, selected }) => {
         <EllipsisVerticalIcon /> 
       </button>
       <menu className={`${isOpen ? 'dropdown-open' : 'dropdown-closed'} panel`} ref={menuRef}>
-        <li id="wholesale" onClick={onClick}>
+        <li data-id="wholesale" onClick={onClick}>
           {selected.wholesale ? <CheckedIcon /> : <UncheckedIcon />}
           <div>Wholesale Sales</div>
         </li>
-        <li id="unitsSold" onClick={onClick}>
+        <li data-id="unitsSold" onClick={onClick}>
           {selected.unitsSold ? <CheckedIcon /> : <UncheckedIcon />}
           <div>Units Sold</div>
         </li>
-        <li id="retailerMargin" onClick={onClick}>
+        <li data-id="retailerMargin" onClick={onClick}>
           {selected.retailerMargin ? <CheckedIcon /> : <UncheckedIcon />}
           <div>Retailer Margin</div>
         </li>

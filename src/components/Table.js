@@ -42,7 +42,7 @@ const Table = ({ data }) => {
     setState(init)
   }
 
-  const handleScroll = event => {
+  const handleTableScroll = event => {
     const offset = event.target.scrollTop
     setIsSticky(offset > 0)
   }

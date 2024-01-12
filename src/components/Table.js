@@ -20,8 +20,8 @@ const Table = ({ data }) => {
 
   const sortData = (currentKey, descending) => {
     return [...data].sort((a, b) => {
-      const aValue = currentKey === 'weekEnding' ? Number(a[currentKey].split('-')[1]) : a[currentKey]
-      const bValue = currentKey === 'weekEnding' ? Number(b[currentKey].split('-')[1]) : b[currentKey]
+      const aValue = currentKey === 'weekEnding' ? new Date(a[currentKey]) : a[currentKey]
+      const bValue = currentKey === 'weekEnding' ? new Date(b[currentKey]) : b[currentKey]
       return descending ? bValue - aValue : aValue - bValue
     })
   }

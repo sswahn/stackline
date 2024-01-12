@@ -41,7 +41,7 @@ const Table = ({ data }) => {
     const sorted = [...data].sort((a, b) => {
       const aValue = currentKey === 'weekEnding' ? Number(a[currentKey].split('-')[1]) : a[currentKey]
       const bValue = currentKey === 'weekEnding' ? Number(b[currentKey].split('-')[1]) : b[currentKey]
-      return decending ? bValue - aValue : aValue - bValue
+      return descending ? bValue - aValue : aValue - bValue
     })
     const formatted = formatData(sorted)
     setState(formatted)

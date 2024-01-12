@@ -5,25 +5,8 @@ import CaretUpIcon from '../icons/CaretUpIcon'
 
 const Table = ({ data }) => {
   const [state, setState] = useState([])
-  const [key, setKey] = useState(null)
+  const [key, setKey] = useState(undefined)
   const [isDescending, setIsDescending] = useState(true)
-
-  const getKey = text => {
-    switch (text) {
-      case 'Week Ending':
-        return 'weekEnding'
-      case 'Retail Sales':
-        return 'retailSales'
-      case 'Wholesale Sales':
-        return 'wholesaleSales'
-      case 'Units Sold':
-        return 'unitsSold'
-      case 'Retailer Margin':
-        return 'retailerMargin'
-      default:
-        return null
-    }
-  }
 
   const formatData = array => {
     return array.map((item) => ({
@@ -44,7 +27,7 @@ const Table = ({ data }) => {
   }
 
   const handleSort = event => {
-    const currentKey = getKey(event.target.firstChild.textContent)
+    const currentKey = event.currentTarget.dataset.id
     const descending = currentKey === key ? !isDescending : true
     const sorted = sortData(currentKey, descending)
     const formatted = formatData(sorted)
@@ -67,23 +50,23 @@ const Table = ({ data }) => {
       <table>
         <thead>
           <tr>
-            <th onClick={handleSort}>
+            <th data-id="weekEnding" onClick={handleSort}>
               <span>Week Ending</span>
               {key === 'weekEnding' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
             </th>
-            <th onClick={handleSort}>
+            <th data-id="retailSales" onClick={handleSort}>
               <span>Retail Sales</span>
               {key === 'retailSales' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
             </th>
-            <th onClick={handleSort}>
+            <th data-id="wholesaleSales" onClick={handleSort}>
               <span>Wholesale Sales</span>
               {key === 'wholesaleSales' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
             </th>
-            <th onClick={handleSort}>
+            <th data-id="unitsSold" onClick={handleSort}>
               <span>Units Sold</span>
               {key === 'unitsSold' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
             </th>
-            <th onClick={handleSort}>
+            <th data-id="retailerMargin" onClick={handleSort}>
               <span>Retailer Margin</span>
               {key === 'retailerMargin' && (isDescending ? <CaretDownIcon /> : <CaretUpIcon />) || <CaretDownIcon />}
             </th>

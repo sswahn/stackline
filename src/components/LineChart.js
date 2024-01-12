@@ -53,7 +53,7 @@ const LineChartComponent = ({ data }) => {
     <div className="retail-chart panel">
       <h3>Retail Sales</h3>
       <Dropdown onClick={handleDropdown} selected={showSales} />
-      <ResponsiveContainer width="100%" height={450}>
+      <ResponsiveContainer width="100%" height={460}>
         <LineChart data={data}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} x1="10%" x2="50%" />
           <YAxis hide={true} domain={[adjustedMinValue, adjustedMaxValue]} />

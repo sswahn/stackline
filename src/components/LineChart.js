@@ -7,7 +7,6 @@ const months = [
 ]
 
 const LineChartComponent = ({ data }) => {
-  const [state, setState] = useState([])
   const [adjustedMinValue, setAdjustedMinValue] = useState([])
   const [adjustedMaxValue, setAdjustedMaxValue] = useState([])
   const [showSales, setShowSales] = useState({

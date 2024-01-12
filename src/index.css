@@ -111,7 +111,7 @@ body {
 .recharts-wrapper,
 .recharts-surface,
 .recharts-layer {
-  z-index: 1;
+  z-index: 0;
 }
 
 
@@ -120,6 +120,7 @@ body {
   position: absolute;
   right: 15px;
   top: 20px;
+  z-index: 1;
 }
 
 .dropdown button {

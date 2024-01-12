@@ -189,6 +189,10 @@ body {
   width: 100%;
 }
 
+.retail-table thead tr {
+  border-bottom: 1px solid #eee;
+}
+
 .retail-table svg {
   vertical-align: middle;
 }

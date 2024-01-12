@@ -193,7 +193,7 @@ body {
 }
 
 .retail-table thead tr {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eee !important;
 }
 
 .retail-table svg {

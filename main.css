@@ -192,10 +192,6 @@ body {
   width: 100%;
 }
 
-.retail-table thead tr {
-  border-bottom: 1px solid #eee !important;
-}
-
 .retail-table svg {
   vertical-align: middle;
 }
@@ -222,6 +218,8 @@ body {
   top: 0;
   vertical-align: middle;
   z-index: 1;
+
+  border-bottom: 1px solid #eee;
 }
 
 .retail-table th span {

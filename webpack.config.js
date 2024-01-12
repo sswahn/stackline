@@ -9,7 +9,7 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(process.cwd(), 'build'),
-    publicPath: '/',
+    publicPath: '/stackline/',
   },
   module: {
     rules: [

@@ -223,12 +223,6 @@ body {
   margin-right: 5%;
 }
 
-/* Use CSS Grid for equal column spacing */
-.retail-table tbody {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Adjust minimum column width as needed */
-}
-
 .footer {
   text-align: center;
   width: 100%;

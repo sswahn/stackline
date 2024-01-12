@@ -50,23 +50,23 @@ const Table = ({ data }) => {
           <tr>
             <th data-id="weekEnding" onClick={handleSort}>
               <span>Week Ending</span>
-              <Caret direction={key === 'weekEnding' ? (isDescending ? 'down' : 'up') : 'down'} />
+              <Caret id="weekEnding" key={key} direction={isDescending} />
             </th>
             <th data-id="retailSales" onClick={handleSort}>
               <span>Retail Sales</span>
-              <Caret direction={key === 'retailSales' ? (isDescending ? 'down' : 'up') : 'down'} />
+              <Caret direction={key === 'retailSales' ? isDescending : true} />
             </th>
             <th data-id="wholesaleSales" onClick={handleSort}>
               <span>Wholesale Sales</span>
-              <Caret direction={key === 'wholesaleSales' ? (isDescending ? 'down' : 'up') : 'down'} />
+              <Caret direction={key === 'wholesaleSales' ? isDescending : true} />
             </th>
             <th data-id="unitsSold" onClick={handleSort}>
               <span>Units Sold</span>
-              <Caret direction={key === 'unitsSold' ? (isDescending ? 'down' : 'up') : 'down'} />
+              <Caret direction={key === 'unitsSold' ? isDescending : true} />
             </th>
             <th data-id="retailerMargin" onClick={handleSort}>
               <span>Retailer Margin</span>
-              <Caret direction={key === 'retailerMargin' ? (isDescending ? 'down' : 'up') : 'down'} />
+              <Caret direction={key === 'retailerMargin' ? isDescending : true} />
             </th>
           </tr>
         </thead>

@@ -114,11 +114,12 @@ body {
   z-index: 0;
 }
 
-.recharts-layer, 
+
 .recharts-cartesian-axis, 
 .recharts-xAxis, 
 .xAxis {
   border: 1px dashed red;
+  z-index: 2;
 }
 
 .dropdown {

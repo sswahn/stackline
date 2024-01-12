@@ -213,25 +213,20 @@ body {
   padding: 15px 0;
 }
 
-.retail-table th:first-child,
-.retail-table td:first-child {
-  padding-left: 30px;
-  text-align: left;
-}
-
-.retail-table th:not(:first-child):not(:last-child),
-.retail-table td:not(:first-child):not(:last-child) {
-  text-align: center;
-}
-
-.retail-table th:last-child {
+.retail-table th {
   padding-right: 30px;
   text-align: right;
 }
 
-.retail-table td:last-child {
+.retail-table td {
   padding-right: 52px;
   text-align: right;
+}
+
+.retail-table th:first-child,
+.retail-table td:first-child {
+  padding-left: 30px;
+  text-align: left;
 }
 
 .footer {

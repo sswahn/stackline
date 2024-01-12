@@ -29,7 +29,7 @@ const Table = ({ data }) => {
 
   const handleSort = event => {
     const currentKey = event.currentTarget.dataset.id
-    const descending = currentKey === key ? !isDescending : false
+    const descending = currentKey === key ? !isDescending : true
     const sorted = sortData(currentKey, descending)
     const formatted = formatData(sorted)
     setState(formatted)

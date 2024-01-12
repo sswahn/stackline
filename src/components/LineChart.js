@@ -16,7 +16,7 @@ const LineChartComponent = ({ data }) => {
   })
   
   const handleDropdown = event => {
-    const type = event.currentTarget.id
+    const type = event.currentTarget.dataset.id
     setShowSales(prevState => ({ ...prevState, [type]: !prevState[type] }))
   }
 

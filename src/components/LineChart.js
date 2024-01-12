@@ -50,25 +50,25 @@ const LineChartComponent = ({ data }) => {
   }, [data])
    
   return (
-    <div className="retail-chart panel">
+    <section className="retail-chart panel" aria-label="Retail Sales Chart">
       <h3>Retail Sales</h3>
       <Dropdown onClick={handleDropdown} selected={showSales} />
       <ResponsiveContainer width="100%" height={460}>
-        <LineChart data={data}>
-          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} x1="10%" x2="50%" />
-          <YAxis hide={true} domain={[adjustedMinValue, adjustedMaxValue]} />
-          {showSales.wholesale && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} />}
+        <LineChart data={data} aria-label="Sales Data Chart">
+          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} x1="10%" x2="50%" aria-label="Retail Sales Line" />
+          {showSales.wholesale && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} aria-label="Wholesale Sales Line" />}
           {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} />}
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} />}
-          <XAxis hide={true} padding={{ left: 35, right: 35 }} />
+          <YAxis hide={true} domain={[adjustedMinValue, adjustedMaxValue]} aria-hidden="true" />
+          <XAxis hide={true} padding={{ left: 35, right: 35 }} aria-hidden="true" />
         </LineChart>
       </ResponsiveContainer>
       <div className="months">
-        <div>
-          {months.map(item => <span>{item}</span>)}
+        <div role="list" aria-label="Months">
+          {months.map(item => <span role="listitem">{item}</span>)}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

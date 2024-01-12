@@ -55,7 +55,7 @@ const LineChartComponent = ({ data }) => {
       <Dropdown onClick={handleDropdown} selected={showSales} />
       <ResponsiveContainer width="100%" height={450}>
         <LineChart data={data}>
-          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={3} dot={false} x1="10%" x2="50%" />
+          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} x1="10%" x2="50%" />
           <YAxis hide={true} domain={[adjustedMinValue, adjustedMaxValue]} />
           {showSales.wholesale && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={3} dot={false} />}
           {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={3} dot={false} />}

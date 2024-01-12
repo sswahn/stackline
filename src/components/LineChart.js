@@ -76,7 +76,17 @@ const LineChartComponent = ({ data }) => {
           {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={3} dot={false} />}
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={3} dot={false} />}
           <line x1="0%" y1="90%" x2="100%" y2="90%" stroke="#eeeeee" strokeWidth="1" />
-          <XAxis dataKey="weekEnding" axisLine={false} tickLine={false} ticks={uniqueMonths} tick={{ fill: '#ABB8C8', fontSize: '14px' }} dx={-5} padding={{ left: 35, right: 35 }} />
+          <XAxis 
+            dataKey="weekEnding" 
+            axisLine={false} 
+            tickLine={false} 
+            ticks={uniqueMonths} 
+            tick={{ fill: '#ABB8C8', fontSize: '14px' }}
+            dx={-5} 
+            padding={{ left: 35, right: 35 }} 
+            style={{
+              border: '1px dashed red'
+          }}/>
         </LineChart>
       </ResponsiveContainer>
     </div>

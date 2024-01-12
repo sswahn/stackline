@@ -218,6 +218,11 @@ body {
   text-align: left;
 }
 
+.retail-table th:not(:first-child):not(:last-child),
+.retail-table td:not(:first-child):not(:last-child) {
+  margin-right: 5%;
+}
+
 .footer {
   text-align: center;
   width: 100%;

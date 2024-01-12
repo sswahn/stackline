@@ -63,7 +63,7 @@ const Table = ({ data }) => {
   }, [data])
 
   return (
-    <div className="retail-table panel">
+    <section className="retail-table panel">
       <table>
         <thead>
           <tr>
@@ -101,7 +101,7 @@ const Table = ({ data }) => {
           ))}
         </tbody>
       </table>
-    </div>
+    </section>
   )
 }
 

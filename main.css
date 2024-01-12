@@ -208,14 +208,18 @@ body {
 
 .retail-table th {
   align-items: center;
+  background-color: white;
   color: #5F6F85;
   cursor: pointer;
   font-size: 13px;
   font-weight: normal;
   padding: 25px 30px 25px 0;
+  position: sticky;
   text-align: right;
   text-transform: uppercase;
+  top: 0;
   vertical-align: middle;
+  z-index: 1;
 }
 
 .retail-table td {

@@ -114,6 +114,7 @@ body {
 .retail-chart .months div {
   color: #ABB8C8;
   display: flex; 
+  font-size: 13px;
   justify-content: space-between; 
   padding: 0 35px;
 }

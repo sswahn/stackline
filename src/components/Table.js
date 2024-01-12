@@ -19,22 +19,19 @@ const Table = ({ data }) => {
     }))
   }
 
-  const sortData = (currentKey, descending) => {
+  const sortData = id => {
     return [...data].sort((a, b) => {
-      const aValue = currentKey === 'weekEnding' ? new Date(a[currentKey]) : a[currentKey]
-      const bValue = currentKey === 'weekEnding' ? new Date(b[currentKey]) : b[currentKey]
-      return descending ? bValue - aValue : aValue - bValue
+      return isDescending ? b - a : a - b
     })
   }
 
   const handleSort = event => {
-    const currentKey = event.currentTarget.dataset.id
-    const descending = currentKey === key ? !isDescending : true
-    const sorted = sortData(currentKey, descending)
+    const id = event.currentTarget.dataset.id
+    const sorted = sortData(id)
     const formatted = formatData(sorted)
+    setIsDescending(prevState => !prevState)
     setState(formatted)
-    setIsDescending(descending)
-    setKey(currentKey)
+    setKey(id)
   }
 
   const initializeState = () => {

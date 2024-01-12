@@ -27,19 +27,19 @@ const Dropdown = ({ onClick, selected }) => {
   
   return (
     <div className="dropdown">
-      <button type="button" onClick={toggleDropdown} ref={dropdownRef} aria-label="dropdown button" aria-haspopup="true" aria-expanded={isOpen}>
+      <button type="button" onClick={toggleDropdown} ref={dropdownRef}>
         <EllipsisVerticalIcon /> 
       </button>
-      <menu className={`${isOpen ? 'dropdown-open' : 'dropdown-closed'} panel`} ref={menuRef} aria-hidden={!isOpen}>
-        <li onClick={onClick} role="menuitem">
+      <menu className={`${isOpen ? 'dropdown-open' : 'dropdown-closed'} panel`} ref={menuRef}>
+        <li id="wholesale" onClick={onClick}>
           {selected.wholesale ? <CheckedIcon /> : <UncheckedIcon />}
           <div>Wholesale Sales</div>
         </li>
-        <li onClick={onClick} role="menuitem">
+        <li id="unitsSold" onClick={onClick}>
           {selected.unitsSold ? <CheckedIcon /> : <UncheckedIcon />}
           <div>Units Sold</div>
         </li>
-        <li onClick={onClick} role="menuitem">
+        <li id="retailerMargin" onClick={onClick}>
           {selected.retailerMargin ? <CheckedIcon /> : <UncheckedIcon />}
           <div>Retailer Margin</div>
         </li>

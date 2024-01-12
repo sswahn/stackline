@@ -102,6 +102,10 @@ body {
   position: relative;
   padding-bottom: 15px;
   width: 100%;
+
+  transform: none; /* Remove or adjust transform */
+  opacity: 1; /* Set opacity to 1 */
+  filter: none; /* Remove or adjust filter */
 }
 
 .retail-chart h3 {
@@ -110,6 +114,10 @@ body {
   padding: 22px 0 0 22px;
 }
 
+.recharts-responsive-container {
+  position: relative; /* or another positioning value */
+  z-index: 1; /* or a higher value if needed */
+}
 
 
 

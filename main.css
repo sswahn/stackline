@@ -404,6 +404,10 @@ body {
     content: "Retailer Margin: ";
     font-weight: bold;
   }
+
+  .footer small {
+    padding: 10px 0;
+  }
 }
 
 

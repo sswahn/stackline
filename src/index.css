@@ -228,8 +228,9 @@ body {
   right: 0;
 }
 
-.retail-table.scrolling {
-  padding: 15px;
+.retail-table th.scrolling {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .retail-table th span {

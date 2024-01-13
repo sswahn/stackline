@@ -279,7 +279,7 @@ body {
 @media screen and (max-width: 500px) {
   .banner {
     height: auto;
-    padding: 0 0 5px 10px;
+    padding: 5px 0 10px 10px;
     width: 100%;
   }
 
@@ -305,7 +305,7 @@ body {
 
   .sidebar header img {
     display: block;
-    margin: 0 10px;
+    margin: 0 20px;
     width: 100%;
   }
 
@@ -374,8 +374,24 @@ body {
     padding-left: 30px;
   }
 
-  .retail-table tbody tr td:first-child::before {
-    content: "Prepended Word: ";
+  .retail-table tbody tr td:nth-child(1)::before {
+    content: "Week Ending: ";
+  }
+
+  .retail-table tbody tr td:nth-child(2)::before {
+    content: "Retail Sales: ";
+  }
+
+  .retail-table tbody tr td:nth-child(3)::before {
+    content: "Wholesale Sales: ";
+  }
+
+  .retail-table tbody tr td:nth-child(4)::before {
+    content: "Units Sold: ";
+  }
+
+  .retail-table tbody tr td:nth-child(5)::before {
+    content: "Retailer Margin: ";
   }
     
   .retail-table td:first-child {

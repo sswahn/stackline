@@ -276,7 +276,7 @@ body {
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
   .banner {
     height: auto;
     padding: 0 0 5px 10px;
@@ -294,6 +294,22 @@ body {
   .sidebar {
     margin-right: 0;
     margin-bottom: 10px;
+    max-width: 100%;
+  }
+
+  .sidebar header img {
+    margin: 0 10px;
+    width: 100%;
+  }
+
+  .sidebar header h2 {
+    font-size: 30px;
+  }
+
+  .sidebar header p {
+    font-size: 20px;
+    line-height: 25px;
+    margin: 0 10px;
     max-width: 100%;
   }
   

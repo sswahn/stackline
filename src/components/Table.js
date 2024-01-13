@@ -53,7 +53,7 @@ const Table = ({ data }) => {
   }, [])
 
   return (
-    <section className={`retail-table panel ${isScrolling ? ' scrolling' : ''}`} ref={tableContainerRef}>
+    <section className={`retail-table panel ${isScrolling ? 'scrolling' : ''}`} ref={tableContainerRef}>
       <table>
         <thead>
           <tr>

@@ -18,7 +18,7 @@ const CustomTooltip = ({ active, payload, label }) => {
   }
 
   const formatValue = (name, value) => {
-    return name === 'weekEnding' ? value : `$${parseInt(value, 10).toLocaleString()}`
+    return name === 'weekEnding' || name === 'unitsSold' ? value : `$${parseInt(value, 10).toLocaleString()}`
   } 
   
   return active && payload ? (

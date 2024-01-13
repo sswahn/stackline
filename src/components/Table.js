@@ -83,6 +83,11 @@ const Table = ({ data }) => {
             </tr>
           ))}
         </tbody>
+        <tfoot>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+        </tfoot>
       </table>
     </section>
   )

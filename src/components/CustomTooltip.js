@@ -22,7 +22,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     return `${formatName(name)}: ${formatValue(name, value)}`
   }
   
-  return active && payload ? (
+  return active && !!payload.length && (
     <div className="custom-tooltip panel">
       <p>{formatDate(label)}</p>
       {payload.map((entry, index) => (
@@ -31,7 +31,7 @@ const CustomTooltip = ({ active, payload, label }) => {
         </p>
       ))}
     </div>
-  ) : null
+  )
 }
 
 export default CustomTooltip

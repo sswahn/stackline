@@ -64,7 +64,10 @@ const Table = ({ data }) => {
           <tr>
             {!!state.length && Object.keys(state[0]).map(item => (
               <th key={item} className={isScrolling ? 'scrolling' : ''}>
-                <div data-id={item} onClick={handleSort}>
+                <div data-id={item} onClick={handleSort} style={{ 
+                  border: '1px dashed red',
+                  display: 'inline-block'
+                }}>
                   <span>{item.replace(/([A-Z])/g, ' $1')}</span>
                   <Caret id={item} sortKey={sortKey} isDescending={isDescending} />
                 </div>

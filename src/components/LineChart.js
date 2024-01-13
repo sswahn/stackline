@@ -1,11 +1,8 @@
 import { useState, useEffect } from 'react'
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts'
+import { config } from '../config'
 import Dropdown from './Dropdown'
 import CustomTooltip from './CustomTooltip'
-
-const months = [
-  'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
-]
 
 const LineChartComponent = ({ data }) => {
   const [adjustedBase, setAdjustedBase] = useState([])
@@ -51,7 +48,7 @@ const LineChartComponent = ({ data }) => {
       </ResponsiveContainer>
       <div className="months">
         <div>
-          {months.map(month => <span key={month}>{month}</span>)}
+          {config.months.map(month => <span key={month}>{month}</span>)}
         </div>
       </div>
     </section>

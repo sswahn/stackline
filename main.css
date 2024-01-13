@@ -347,6 +347,27 @@ body {
   .retail-chart .months span:nth-child(2n) {
     display: none;
   }
+
+
+  .retail-table table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .retail-table th,
+  .retail-table td {
+    display: block;
+    width: auto;
+    text-align: left;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+  }
+
+  .retail-table th span {
+    display: none; /* Hide span content on smaller screens */
+  }
   
 }
 

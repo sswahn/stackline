@@ -14,13 +14,17 @@ const Table = ({ data }) => {
     return `${month}-${day}-${shortYear}`
   }
 
+  const formatEntry = entry => {
+    return $${parseInt(entry, 10).toLocaleString()}
+  }
+
   const formatData = array => {
     return array.map(item => ({
       weekEnding: formatDate(item.weekEnding),
-      retailSales: `$${parseInt(item.retailSales, 10).toLocaleString()}`,
-      wholesaleSales: `$${parseInt(item.wholesaleSales, 10).toLocaleString()}`,
+      retailSales: formatEntry(item.retailSales),
+      wholesaleSales: formatEntry(item.wholesaleSales),
       unitsSold: item.unitsSold,
-      retailerMargin: `$${parseInt(item.retailerMargin, 10).toLocaleString()}`
+      retailerMargin: formatEntry(item.retailerMargin)
     }))
   }
 

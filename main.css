@@ -318,7 +318,7 @@ body {
 
   .sidebar header p {
     font-size: 20px;
-    line-height: 25px;
+    line-height: 30px;
     margin: 0 10px;
     max-width: 100%;
   }
@@ -377,7 +377,7 @@ body {
     padding-left: 30px;
   }
 
-  .retail-table tbody tr:nth-child(5n) td::before {
+  .retail-table tbody tr:nth-child(6n) td::before {
     content: "Week Ending: ";
   }
     

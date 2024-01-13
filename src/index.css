@@ -298,15 +298,14 @@ body {
   }
 
   .sidebar header {
-    diplay: inline-block;
+    diplay: flex;
+    flex-direction: column;
     width: 100%;
   }
 
   .sidebar header img {
-    box-sizing: border-box;
     display: block;
-    margin: 0 10px;
-    object-fit: contain;
+    margin: 0;
     width: 100%;
   }
 

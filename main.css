@@ -235,6 +235,11 @@ body {
   padding-bottom: 15px;
 }
 
+.retail-table th div {
+  cursor: pointer;
+  display: inline-block;
+}
+
 .retail-table th span {
   margin-right: 5px;
 }

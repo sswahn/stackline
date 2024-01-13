@@ -345,12 +345,13 @@ body {
     display: none;
   }
 
-.retail-table * {
+  .retail-table * {
   border: 1px dashed red;
 }
 
 .retail-table table {
-  display: block;
+  display: table;
+  table-layout: fixed; /* Set table layout to fixed */
   width: 100%;
   overflow-x: auto;
   white-space: nowrap;
@@ -362,16 +363,17 @@ body {
 
 .retail-table tbody,
 .retail-table tbody tr {
-  display: flex;
-  flex-wrap: nowrap;
+  display: table-row;
 }
 
 .retail-table td {
-  flex: 1; /* Equal width for each cell */
+  display: table-cell;
+  width: 100%; /* Set width to 100% for each cell */
   text-align: left;
   box-sizing: border-box;
   border-bottom: 1px solid #eee;
 }
+
   
 }
 

@@ -368,10 +368,14 @@ body {
   
   .retail-table td {
     width: 100%;
-    text-align: left;
+    text-align: right;
     box-sizing: border-box;
     border-bottom: 1px solid #eee;
     padding-left: 30px;
+  }
+
+  .retail-table tbody tr:nth-child(5n) td::before {
+    content: "Week Ending: ";
   }
     
   .retail-table td:first-child {

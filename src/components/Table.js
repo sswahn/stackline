@@ -66,6 +66,7 @@ const Table = ({ data }) => {
               <th key={item} className={isScrolling ? 'scrolling' : ''}>
                 <div data-id={item} onClick={handleSort} style={{ 
                   border: '1px dashed red',
+                  cursor: 'pointer',
                   display: 'inline-block'
                 }}>
                   <span>{item.replace(/([A-Z])/g, ' $1')}</span>

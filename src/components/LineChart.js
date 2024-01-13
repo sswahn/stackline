@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts'
 import Dropdown from './Dropdown'
+import CustomTooltip from './CustomTooltip'
 
 const months = [
   'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
@@ -45,7 +46,7 @@ const LineChartComponent = ({ data }) => {
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} />}
           <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} />
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />
-          <Tooltip />
+          <Tooltip content={<CustomTooltip />} />
         </LineChart>
       </ResponsiveContainer>
       <div className="months">

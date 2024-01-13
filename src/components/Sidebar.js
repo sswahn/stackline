@@ -1,14 +1,14 @@
 
-const Sidebar = ({ title, image, subtitle, tags }) => {
+const Sidebar = ({ data }) => {
   return (
     <section className="sidebar panel">
       <header>
-        <img src={image} alt={title} />
-        <h2>{title}</h2>
-        <p>{subtitle}</p>
+        <img src={data.image} alt={data.title} />
+        <h2>{data.title}</h2>
+        <p>{data.subtitle}</p>
       </header>
       <nav>
-        {tags.map(tag => <button key={tag} type="button">{tag}</button> )}
+        {data.tags.map(tag => <button key={tag} type="button">{tag}</button> )}
       </nav>
     </section>
   )

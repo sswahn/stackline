@@ -18,12 +18,15 @@ const CustomTooltip = ({ active, payload, label }) => {
   }
 
   const formatValue = (name, value) => {
+    if (isNaN(`$${parseInt(value, 10).toLocaleString()}`)) {
+      console.warn('NaN HERE!:', value)
+    }
     return name === 'weekEnding' || name === 'unitsSold' ? value : `$${parseInt(value, 10).toLocaleString()}`
   } 
   
   return active && payload ? (
     <div className="custom-tooltip panel">
-      <p>{formatDate(label)}}</p>
+      <p>{formatDate(label)}</p>
       {payload.map((entry, index) => (
         <p key={`item-${index}`} style={{ color: entry.color }}>
           {`${formatName(entry.name)}: ${formatValue(entry.value)}`}

@@ -6,6 +6,7 @@ const Table = ({ data }) => {
   const [state, setState] = useState([])
   const [sortKey, setSortKey] = useState(undefined)
   const [isDescending, setIsDescending] = useState(true)
+  const [isScrolling, setIsScrolling] = useState(false)
   const tableContainerRef = useRef(null)
 
   const formatData = array => {
@@ -33,6 +34,10 @@ const Table = ({ data }) => {
     setIsDescending(prevState => !prevState)
     setState(formatted)
     setSortKey(id)
+  }
+
+  const handleScroll = () => {
+    setIsScrolling(tableContainerRef.current.scrollTop > 0)
   }
 
   useEffect(() => {

@@ -348,42 +348,38 @@ body {
     display: none;
   }
 
-
-
-.retail-table * {
-  border: 1px dashed red;
-}
-
-.retail-table table {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
-.retail-table thead {
-  display: none;
-}
-
-.retail-table tbody {
-  display: block;
-}
-
-.retail-table tbody tr {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-.retail-table td {
-  width: 100%;
-  text-align: left;
-  box-sizing: border-box;
-  border-bottom: 1px solid #eee;
-}
-
-
-
+  .retail-table table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .retail-table thead {
+    display: none;
+  }
+  
+  .retail-table tbody {
+    display: block;
+  }
+  
+  .retail-table tbody tr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .retail-table td {
+    width: 100%;
+    text-align: left;
+    box-sizing: border-box;
+    border-bottom: 1px solid #eee;
+    padding-left: 30px;
+  }
+    
+  .retail-table td:first-child {
+    width: 100% !important;
+  }
   
 }
 

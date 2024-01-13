@@ -1,12 +1,10 @@
+import { config } from '../config'
 
 const CustomTooltip = ({ active, payload, label }) => {
 
   const formatDate = date => {
     const month = date.split('-').at(1)
-    const monthNames = [
-      'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
-    ]
-    return monthNames[parseInt(month, 10) - 1]
+    return config.months[parseInt(month, 10) - 1]
   }
   
   const formatName = name => {

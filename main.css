@@ -348,6 +348,10 @@ body {
     display: none;
   }
 
+  .retail-table * {
+    border: 1px dashed red;
+  }
+
   .retail-table table {
     display: block;
     width: 100%;

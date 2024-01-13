@@ -303,14 +303,12 @@ body {
   .sidebar header {
     diplay: flex;
     flex-direction: column;
-    padding: 0 20px;
+    padding: 10px 20px 0 20px;
     width: 100%;
   }
 
   .sidebar header img {
     width: 100%;
-
-    border: 1px dashed red;
   }
 
   .sidebar header h2 {
@@ -372,7 +370,7 @@ body {
   
   .retail-table td {
     width: 100%;
-    text-align: right;
+    text-align: left;
     box-sizing: border-box;
     border-bottom: 1px solid #eee;
     padding-left: 30px;
@@ -380,27 +378,27 @@ body {
 
   .retail-table tbody tr td:nth-child(1)::before {
     content: "Week Ending: ";
-    text-align: left;
+    font-weight: bold;
   }
 
   .retail-table tbody tr td:nth-child(2)::before {
     content: "Retail Sales: ";
-    text-align: left;
+    font-weight: bold;
   }
 
   .retail-table tbody tr td:nth-child(3)::before {
     content: "Wholesale Sales: ";
-    text-align: left;
+    font-weight: bold;
   }
 
   .retail-table tbody tr td:nth-child(4)::before {
     content: "Units Sold: ";
-    text-align: left;
+    font-weight: bold;
   }
 
   .retail-table tbody tr td:nth-child(5)::before {
     content: "Retailer Margin: ";
-    text-align: left;
+    font-weight: bold;
   }
     
   .retail-table td:first-child {

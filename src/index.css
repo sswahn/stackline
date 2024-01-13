@@ -356,14 +356,10 @@ body {
   .retail-table th,
   .retail-table td {
     display: block;
-    width: auto;
+    width: 100%;
     text-align: left;
     box-sizing: border-box;
     border-bottom: 1px solid #eee;
-  }
-
-  .retail-table th span {
-    display: none; /* Hide span content on smaller screens */
   }
   
 }

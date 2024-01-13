@@ -13,7 +13,8 @@ const CustomTooltip = ({ active, payload, label }) => {
   }
   
   const formatName = name => {
-    return name.replace(/([A-Z])/g, ' $1').charAt(0).toUpperCase()
+    const formatted = name.replace(/([A-Z])/g, ' $1')
+    return formatted.charAt(0).toUpperCase() + formatted.slice(1)
   }
 
   const formatValue = (name, value) => {

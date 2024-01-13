@@ -376,6 +376,10 @@ body {
     padding-left: 30px;
   }
 
+  .retail-table td:first-child {
+    width: 100% !important;
+  }
+
   .retail-table tbody tr td:nth-child(1)::before {
     content: "Week Ending: ";
     font-weight: bold;
@@ -400,12 +404,6 @@ body {
     content: "Retailer Margin: ";
     font-weight: bold;
   }
-    
-  .retail-table td:first-child {
-    text-align: right;
-    width: 100% !important;
-  }
-  
 }
 
 

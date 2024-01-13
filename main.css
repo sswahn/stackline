@@ -358,6 +358,10 @@ body {
   .retail-table thead {
     display: none;
   }
+
+  .retail-table tbody {
+    width: 100%;
+  }
   
   .retail-table td {
     display: block;

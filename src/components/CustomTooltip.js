@@ -1,9 +1,9 @@
 
 const CustomTooltip = ({ active, payload, label }) => {
 
-  console.log('active: ', active)
-  console.log('payload: ', payload)
-  console.log('label: ', label)
+//  console.log('active: ', active)
+//  console.log('payload: ', payload)
+//  console.log('label: ', label)
   
   const formatDate = date => {
     const month = date.split('-').at(1)
@@ -18,19 +18,23 @@ const CustomTooltip = ({ active, payload, label }) => {
   }
 
   const formatValue = (name, value) => {
-    console.log('name: ', name)
-    console.log('value: ', value)
+    //console.log('name: ', name)
+   // console.log('value: ', value)
     return name === 'weekEnding' || name === 'unitsSold' ? value : `$${parseInt(value, 10).toLocaleString()}`
   } 
   
   return active && payload ? (
     <div className="custom-tooltip panel">
       <p>{formatDate(label)}</p>
-      {payload.map((entry, index) => (
+      {payload.map((entry, index) => {
+    
+        console.log('entry: ', entry)
+    
+        return (
         <p key={`item-${index}`} style={{ color: entry.color }}>
           {`${formatName(entry.name)}: ${formatValue(entry.value)}`}
         </p>
-      ))}
+      )})}
     </div>
   ) : null
 }

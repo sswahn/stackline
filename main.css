@@ -295,22 +295,19 @@ body {
   }
 
   .sidebar {
-    diplay: inline-block;
     margin-right: 0;
     margin-bottom: 10px;
     max-width: 100%;
-
-    border: 1px dashed green;
   }
 
   .sidebar header {
     diplay: inline-block;
-
-    border: 1px dashed red;
+    width: 100%;
   }
 
   .sidebar header img {
-    display: inline-block;
+    box-sizing: border-box;
+    display: block;
     margin: 0 10px;
     object-fit: contain;
     width: 100%;

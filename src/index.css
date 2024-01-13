@@ -197,10 +197,6 @@ body {
   border-top: 1px solid #eee;
 }
 
-.retail-table tbody tr:first-child {
-  border-top: 0 !important;
-}
-
 .retail-table th {
   align-items: center;
   background-color: white;

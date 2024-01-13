@@ -1,9 +1,6 @@
 
 const CustomTooltip = ({ active, payload, label }) => {
 
-   console.log('active: ', active)
-   console.log('payload: ', payload)
-  
   const formatDate = date => {
     const month = date.split('-').at(1)
     const monthNames = [

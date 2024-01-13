@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { config } from '../config'
 import EllipsisVerticalIcon from '../icons/EllipsisVerticalIcon'
 import UncheckedIcon from '../icons/UncheckedIcon'
 import CheckedIcon from '../icons/CheckedIcon'
@@ -33,15 +34,15 @@ const Dropdown = ({ onClick, selected }) => {
       <menu className={`${isOpen ? 'dropdown-open' : 'dropdown-closed'} panel`} ref={menuRef}>
         <li data-id="wholesale" onClick={onClick}>
           {selected.wholesale ? <CheckedIcon /> : <UncheckedIcon />}
-          <div>Wholesale Sales</div>
+          <div>{config.sales.wholesale}</div>
         </li>
         <li data-id="unitsSold" onClick={onClick}>
           {selected.unitsSold ? <CheckedIcon /> : <UncheckedIcon />}
-          <div>Units Sold</div>
+          <div>{config.sales.units}</div>
         </li>
         <li data-id="retailerMargin" onClick={onClick}>
           {selected.retailerMargin ? <CheckedIcon /> : <UncheckedIcon />}
-          <div>Retailer Margin</div>
+          <div>{config.sales.margin}</div>
         </li>
       </menu>
     </div>

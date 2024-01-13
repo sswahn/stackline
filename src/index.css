@@ -345,34 +345,33 @@ body {
     display: none;
   }
 
-  .retail-table * {
-    border: 1px dashed red;
-  }
+.retail-table * {
+  border: 1px dashed red;
+}
 
-  .retail-table table {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-  }
+.retail-table table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
 
-  .retail-table thead {
-    display: none;
-  }
+.retail-table thead {
+  display: none;
+}
 
-  .retail-table tbody, 
-  .retail-table tbody tr {
-    width: 100% !important;
-    max-width: 100% !important;
-  }
-  
-  .retail-table td {
-    display: block;
-    width: 100%;
-    text-align: left;
-    box-sizing: border-box;
-    border-bottom: 1px solid #eee;
-  }
+.retail-table tbody,
+.retail-table tbody tr {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.retail-table td {
+  flex: 1; /* Equal width for each cell */
+  text-align: left;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+}
   
 }
 

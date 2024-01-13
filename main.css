@@ -319,6 +319,16 @@ body {
     margin: 0 10px;
     max-width: 100%;
   }
+
+  .sidebar nav button {
+    margin: 0;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .retail-sales > div {
+    flex: unset;
+  }
   
   .retail-sales {
     display: block;

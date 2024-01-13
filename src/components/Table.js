@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react'
-import { formatTableDate } from '../utilities/formatDate'
 import Caret from './Caret'
 
 const Table = ({ data }) => {
@@ -9,9 +8,15 @@ const Table = ({ data }) => {
   const [isScrolling, setIsScrolling] = useState(false)
   const tableContainerRef = useRef(null)
 
+  const formatDate = date => {
+    const [year, month, day] = date.split('-')
+    const shortYear = year.slice(2)
+    return `${month}-${day}-${shortYear}`
+  }
+
   const formatData = array => {
     return array.map(item => ({
-      weekEnding: formatTableDate(item.weekEnding),
+      weekEnding: formatDate(item.weekEnding),
       retailSales: `$${parseInt(item.retailSales, 10).toLocaleString()}`,
       wholesaleSales: `$${parseInt(item.wholesaleSales, 10).toLocaleString()}`,
       unitsSold: item.unitsSold,
@@ -36,7 +41,7 @@ const Table = ({ data }) => {
     setSortKey(id)
   }
 
-  const handleScroll = () => {
+  const handleScrollEffect = () => {
     setIsScrolling(tableContainerRef.current.scrollTop > 0)
   }
 
@@ -46,9 +51,9 @@ const Table = ({ data }) => {
 
   useEffect(() => {
     const container = tableContainerRef.current
-    container.addEventListener('scroll', handleScroll)
+    container.addEventListener('scroll', handleScrollEffect)
     return () => {
-      container.removeEventListener('scroll', handleScroll)
+      container.removeEventListener('scroll', handleScrollEffect)
     }
   }, [])
 

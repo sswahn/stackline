@@ -14,16 +14,16 @@ const CustomTooltip = ({ active, payload, label }) => {
   }
   
   const formatName = name => {
-    return name === 'weekEnding' ? name : name.replace(/([A-Z])/g, ' $1')
+    return name.replace(/([A-Z])/g, ' $1')
   }
 
   const formatValue = (name, value) => {
-    return name === 'unitsSold' ? value : `$${parseInt(value, 10).toLocaleString()}`
+    return name === 'weekEnding' ? value : `$${parseInt(value, 10).toLocaleString()}`
   } 
   
   return active && payload ? (
     <div className="custom-tooltip">
-      <p>{`Label: ${formatDate(label)}`}</p>
+      <p>{formatDate(label)}}</p>
       {payload.map((entry, index) => (
         <p key={`item-${index}`} style={{ color: entry.color }}>
           {`${formatName(entry.name)}: ${formatValue(entry.value)}`}

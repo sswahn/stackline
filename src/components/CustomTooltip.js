@@ -22,7 +22,7 @@ const CustomTooltip = ({ active, payload, label }) => {
   } 
   
   return active && payload ? (
-    <div className="custom-tooltip">
+    <div className="custom-tooltip panel">
       <p>{formatDate(label)}}</p>
       {payload.map((entry, index) => (
         <p key={`item-${index}`} style={{ color: entry.color }}>

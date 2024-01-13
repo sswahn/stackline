@@ -350,7 +350,7 @@ body {
 
 
 
-  .retail-table * {
+.retail-table * {
   border: 1px dashed red;
 }
 
@@ -366,22 +366,22 @@ body {
 }
 
 .retail-table tbody {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
 .retail-table tbody tr {
-  display: flex;
-  flex: 1;
+  display: block;
   width: 100%;
 }
 
 .retail-table td {
-  flex: 1;
+  display: block;
+  width: 100%;
   text-align: left;
   box-sizing: border-box;
   border-bottom: 1px solid #eee;
 }
+
 
 
   

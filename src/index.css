@@ -345,7 +345,6 @@ body {
     display: none;
   }
 
-
   .retail-table table {
     display: block;
     width: 100%;
@@ -353,7 +352,10 @@ body {
     white-space: nowrap;
   }
 
-  .retail-table th,
+  .retail-table thead {
+    display: none;
+  }
+  
   .retail-table td {
     display: block;
     width: 100%;

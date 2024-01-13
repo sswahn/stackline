@@ -213,6 +213,7 @@ body {
   text-align: right;
   text-transform: uppercase;
   top: 0;
+  transition: padding 0.3s ease;
   vertical-align: middle;
   z-index: 1;
 }
@@ -225,6 +226,10 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+.retail-table th.scrolling {
+  padding: 15px;
 }
 
 .retail-table th span {

@@ -310,7 +310,7 @@ body {
   }
 
   .sidebar header img {
-    display: block;
+    display: inline-block;
     margin: 0 10px;
     object-fit: contain;
     width: 100%;

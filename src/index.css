@@ -290,6 +290,12 @@ body {
   .banner img {
     width: 100px;
   }
+
+  .sidebar {
+    margin-right: 0;
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
   
   .retail-sales {
     display: block;
@@ -300,11 +306,10 @@ body {
   .retail-chart {
     margin-bottom: 10px;
   }
-  
-  .sidebar {
-    margin-right: 0;
-    margin-bottom: 10px;
-    max-width: 100%;
+
+  .retail-chart .months span:nth-child(2n) {
+    display: none;
   }
+  
 }
 

@@ -348,13 +348,14 @@ body {
     display: none;
   }
 
+
+
   .retail-table * {
   border: 1px dashed red;
 }
 
 .retail-table table {
-  display: table;
-  table-layout: fixed; /* Set table layout to fixed */
+  display: block;
   width: 100%;
   overflow-x: auto;
   white-space: nowrap;
@@ -364,18 +365,24 @@ body {
   display: none;
 }
 
-.retail-table tbody,
+.retail-table tbody {
+  display: flex;
+  flex-direction: column;
+}
+
 .retail-table tbody tr {
-  display: table-row;
+  display: flex;
+  flex: 1;
+  width: 100%;
 }
 
 .retail-table td {
-  display: table-cell;
-  width: 100%; /* Set width to 100% for each cell */
+  flex: 1;
   text-align: left;
   box-sizing: border-box;
   border-bottom: 1px solid #eee;
 }
+
 
   
 }

@@ -29,6 +29,8 @@ const CustomTooltip = ({ active, payload, label }) => {
       {payload.map((entry, index) => {
     
         console.log('entry: ', entry)
+        console.log('entry.name: ', entry.name)
+        console.log('entry.value: ', entry.value)
     
         return (
         <p key={`item-${index}`} style={{ color: entry.color }}>

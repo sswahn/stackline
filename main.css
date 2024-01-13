@@ -302,6 +302,10 @@ body {
     max-width: 100%;
   }
 
+  .sidebar header {
+    diplay: inline-block;
+  }
+
   .sidebar header img {
     display: block;
     margin: 0 10px;

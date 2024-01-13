@@ -18,14 +18,18 @@ const CustomTooltip = ({ active, payload, label }) => {
 
   const formatValue = (name, value) => {
     return name === 'weekEnding' || name === 'unitsSold' ? value : `$${parseInt(value, 10).toLocaleString()}`
-  } 
+  }
+
+  const formatData = (name, value) => {
+    return `${formatName(name)}: ${formatValue(name, value)}`
+  }
   
   return active && payload ? (
     <div className="custom-tooltip panel">
       <p>{formatDate(label)}</p>
       {payload.map((entry, index) => (
         <p key={`item-${index}`} style={{ color: entry.color }}>
-          {`${formatName(entry.name)}: ${formatValue(entry.name, entry.value)}`}
+          {formatData(entry.name, entry.value)}
         </p>
       ))}
     </div>

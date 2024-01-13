@@ -18,9 +18,8 @@ const CustomTooltip = ({ active, payload, label }) => {
   }
 
   const formatValue = (name, value) => {
-    if (isNaN(`$${parseInt(value, 10).toLocaleString()}`)) {
-      console.warn('NaN HERE!:', value)
-    }
+    console.log('name: ', name)
+    console.log('value: ', value)
     return name === 'weekEnding' || name === 'unitsSold' ? value : `$${parseInt(value, 10).toLocaleString()}`
   } 
   

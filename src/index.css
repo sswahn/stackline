@@ -130,6 +130,10 @@ body {
   padding: 15px;
 }
 
+.custom-tooltip p {
+  margin-bottom: 10px;
+}
+
 .dropdown {
   position: absolute;
   right: 15px;

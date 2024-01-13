@@ -380,22 +380,27 @@ body {
 
   .retail-table tbody tr td:nth-child(1)::before {
     content: "Week Ending: ";
+    text-align: left;
   }
 
   .retail-table tbody tr td:nth-child(2)::before {
     content: "Retail Sales: ";
+    text-align: left;
   }
 
   .retail-table tbody tr td:nth-child(3)::before {
     content: "Wholesale Sales: ";
+    text-align: left;
   }
 
   .retail-table tbody tr td:nth-child(4)::before {
     content: "Units Sold: ";
+    text-align: left;
   }
 
   .retail-table tbody tr td:nth-child(5)::before {
     content: "Retailer Margin: ";
+    text-align: left;
   }
     
   .retail-table td:first-child {

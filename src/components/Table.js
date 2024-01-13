@@ -15,7 +15,7 @@ const Table = ({ data }) => {
   }
 
   const formatEntry = entry => {
-    return $${parseInt(entry, 10).toLocaleString()}
+    return `$${parseInt(entry, 10).toLocaleString()}`
   }
 
   const formatData = array => {

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { formatTableDate } from '../utilities/formatDate'
 import Caret from './Caret'
 
@@ -6,6 +6,7 @@ const Table = ({ data }) => {
   const [state, setState] = useState([])
   const [sortKey, setSortKey] = useState(undefined)
   const [isDescending, setIsDescending] = useState(true)
+  const tableContainerRef = useRef(null)
 
   const formatData = array => {
     return array.map(item => ({
@@ -38,8 +39,16 @@ const Table = ({ data }) => {
     setState(formatData(data))
   }, [data])
 
+  useEffect(() => {
+    const container = tableContainerRef.current
+    container.addEventListener('scroll', handleScroll)
+    return () => {
+      container.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
-    <section className="retail-table panel">
+    <section className={`retail-table panel ${isScrolling ? ' scrolling' : ''}`} ref={tableContainerRef}>
       <table>
         <thead>
           <tr>

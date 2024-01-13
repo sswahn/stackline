@@ -11,7 +11,7 @@ const App = () => {
     <StrictMode>
       <Provider store={store}>
         <Header />
-        <RetailSales />
+        <Sales />
         <Footer />
       </Provider>
     </StrictMode>

@@ -8,7 +8,7 @@ const Sidebar = ({ data }) => {
         <p>{data.subtitle}</p>
       </header>
       <nav>
-        {data.tags.map(tag => <button key={tag} type="button">{tag}</button> )}
+        {data.tags.map(tag => <button key={tag} type="button">{tag}</button>)}
       </nav>
     </section>
   )

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts'
 import Dropdown from './Dropdown'
 
 const months = [
@@ -45,6 +45,7 @@ const LineChartComponent = ({ data }) => {
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} />}
           <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} />
           <XAxis hide={true} padding={{ left: 35, right: 35 }} />
+          <Tooltip />
         </LineChart>
       </ResponsiveContainer>
       <div className="months">

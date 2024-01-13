@@ -58,12 +58,12 @@ const Table = ({ data }) => {
   }, [])
 
   return (
-    <section className={`retail-table panel ${isScrolling ? 'scrolling' : ''}`} ref={tableContainerRef}>
+    <section className="retail-table panel" ref={tableContainerRef}>
       <table>
         <thead>
           <tr>
             {!!state.length && Object.keys(state[0]).map(item => (
-              <th key={item} data-id={item} onClick={handleSort}>
+              <th key={item} data-id={item} className={isScrolling ? 'scrolling' : ''} onClick={handleSort}>
                 <span>{item.replace(/([A-Z])/g, ' $1')}</span>
                 <Caret id={item} sortKey={sortKey} isDescending={isDescending} />
               </th>

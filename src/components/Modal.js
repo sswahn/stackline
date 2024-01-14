@@ -35,7 +35,7 @@ const Modal = ({ open, onClose, children }) => {
   
   
   return (
-    <dialog className="modal" ref={dialogRef}>
+    <dialog className="modal panel" ref={dialogRef}>
       <div>{children}</div>
     </dialog>
   )

@@ -6,7 +6,7 @@ const Sidebar = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleOnClick = event => {
-    setModal('test string')
+    setModal(event.currentTarget.dataset.id)
     setIsOpen(true)
   }
 
@@ -23,8 +23,8 @@ const Sidebar = ({ data }) => {
         <p>{data.subtitle}</p>
       </header>
       <nav>
-        {data.tags.map(tag => (
-          <button key={tag} onClick={handleOnClick}>{tag}</button>
+        {data.tags.map((tag, index) => (
+          <button key={tag} data-id={data.details[index]} onClick={handleOnClick}>{tag}</button>
         ))}
       </nav>
       <Modal open={isOpen} onClose={handleOnClose}>

@@ -4,7 +4,6 @@ import store from './store/store'
 import Header from './components/Header'
 import Sales from './components/Sales'
 import Footer from './components/Footer'
-import Modal from './components/Modal'
 import './index.css'
 
 const App = () => {
@@ -14,7 +13,6 @@ const App = () => {
         <Header />
         <Sales />
         <Footer />
-        <Modal />
       </Provider>
     </StrictMode>
   )

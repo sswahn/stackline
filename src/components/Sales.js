@@ -1,7 +1,7 @@
+import { useSelector } from 'react-redux'
 import Sidebar from './Sidebar'
 import LineChart from './LineChart'
 import Table from './Table'
-import { useSelector } from 'react-redux'
 
 const Sales = () => {
   const { sales, ...rest } = useSelector(state => state.data.retailSales).at(0)

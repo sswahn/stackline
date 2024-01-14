@@ -54,10 +54,9 @@ const Table = ({ data }) => {
   }, [data])
 
   useEffect(() => {
-    const container = tableContainerRef.current
-    container.addEventListener('scroll', handleScrollEffect)
+    tableContainerRef.current.addEventListener('scroll', handleScrollEffect)
     return () => {
-      container.removeEventListener('scroll', handleScrollEffect)
+      tableContainerRef.current.removeEventListener('scroll', handleScrollEffect)
     }
   }, [])
 

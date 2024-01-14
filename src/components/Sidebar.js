@@ -2,10 +2,12 @@ import { useState } from 'react'
 import Modal from './Modal'
 
 const Sidebar = ({ data }) => {
+  const [modal, setModal] = useState('')
   const [isOpen, setIsOpen] = useState(false)
 
   const handleOnClick = event => {
     // display some item from data in modal
+    setModal('test string')
   }
   
   return (
@@ -20,7 +22,9 @@ const Sidebar = ({ data }) => {
           <button key={tag} onClick={handleOnClick}>{tag}</button>
         ))}
       </nav>
-      <Modal open={isOpen} />
+      <Modal open={isOpen}>
+        <p>{modal}</p>
+      </Modal>
     </section>
   )
 }

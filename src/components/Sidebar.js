@@ -28,13 +28,9 @@ const Sidebar = ({ data }) => {
         ))}
       </nav>
       <Modal open={isOpen} onClose={handleOnClose}>
-        <div>
-          <img src={data.image} alt={data.title} />
-        </div>
-        <div>
-          <h2>{data.title}</h2>
-          <p>{modal}</p>
-        </div>
+        <img src={data.image} alt={data.title} />
+        <h2>{data.title}</h2>
+        <p>{modal}</p>
       </Modal>
     </section>
   )

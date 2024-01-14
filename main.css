@@ -6,18 +6,19 @@
   src: url(/stackline/fc2b5060f7accec5cf74.ttf) format('truetype');
 }
 
-*:not(dialog) {
+*:not(.modal) {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
 
-dialog {
+.modal {
   border: 0;
+  padding: 20px;
 }
 
-dialog::backdrop {
+.modal::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
 

@@ -6,8 +6,13 @@ const Sidebar = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleOnClick = event => {
-    // display some item from data in modal
     setModal('test string')
+    setIsOpen(true)
+  }
+
+  const handleOnClose = () => {
+    setIsOpen(false)
+    setModal('')
   }
   
   return (
@@ -22,7 +27,7 @@ const Sidebar = ({ data }) => {
           <button key={tag} onClick={handleOnClick}>{tag}</button>
         ))}
       </nav>
-      <Modal open={isOpen}>
+      <Modal open={isOpen} onClose={handleOnClose}>
         <p>{modal}</p>
       </Modal>
     </section>

@@ -1,5 +1,13 @@
+import { useState } from 'react'
+import Modal from './Modal'
 
 const Sidebar = ({ data }) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const handleOnClick = event => {
+    // display some item from data in modal
+  }
+  
   return (
     <section className="sidebar panel">
       <header>
@@ -8,8 +16,11 @@ const Sidebar = ({ data }) => {
         <p>{data.subtitle}</p>
       </header>
       <nav>
-        {data.tags.map(tag => <button key={tag} type="button">{tag}</button>)}
+        {data.tags.map(tag => (
+          <button key={tag} onClick={handleOnClick}>{tag}</button>
+        ))}
       </nav>
+      <Modal open={isOpen} />
     </section>
   )
 }

@@ -36,7 +36,11 @@
 
 .modal h2 {
   color: #455066;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.modal p {
+  color: #ABB8C8;
 }
 
 html, body {

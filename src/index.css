@@ -27,8 +27,12 @@
   width: 100%;
 }
 
-.modal > div img {
-  width: 50px;
+.modal img {
+  width: 75px;
+}
+
+.modal h1 {
+  margin-bottom: 20px;
 }
 
 html, body {

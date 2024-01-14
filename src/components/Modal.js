@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 
-const Modal = ({ open, children }) => {
+const Modal = ({ open, onClose, children }) => {
   const dialogRef = useRef(null)
   
   const openModal = () => {
@@ -9,6 +9,7 @@ const Modal = ({ open, children }) => {
   
   const closeModal = event => {
     dialogRef.current.close()
+    onClose && onClose()
   }
 
   const clickToClose = event => {

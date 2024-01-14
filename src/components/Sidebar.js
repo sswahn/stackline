@@ -28,6 +28,7 @@ const Sidebar = ({ data }) => {
         ))}
       </nav>
       <Modal open={isOpen} onClose={handleOnClose}>
+        <h2>{data.title}</h2>
         <p>{modal}</p>
       </Modal>
     </section>

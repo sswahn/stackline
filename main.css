@@ -18,7 +18,7 @@ dialog {
 }
 
 dialog::backdrop {
-  background-color: #448;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 html, body {

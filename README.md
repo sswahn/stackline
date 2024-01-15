@@ -16,3 +16,6 @@ Visit the app and dive into the world of retail data:
 - **React**: The powerhouse behind the UI magic.
 - **Redux**: For comfortable state management.
 - **Recharts**: Your companion for creating stunning charts.
+
+
+![mockup](https://www.dropbox.com/scl/fi/7rtx9gs1wksiadv36qzsi/stackline_assessment_mockup_2021.png?rlkey=2s6i8rm1lumj2fyx0c9yhfmcn&dl=0)

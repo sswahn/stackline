@@ -8,11 +8,11 @@ Welcome to the Stackline Retail Data Visualization Challenge! This React project
 - Table Data: Explore detailed retail data in a sleek and interactive table.
 - Table Sorting: Sort the table by various columns for a customized experience.
 
-![mockup](https://www.dropbox.com/scl/fi/7rtx9gs1wksiadv36qzsi/stackline_assessment_mockup_2021.png?rlkey=2s6i8rm1lumj2fyx0c9yhfmcn&raw=1)
-
 ## 🚀 Getting Started
 Visit the app and dive into the world of retail data:
 [https://sswahn.github.io/stackline/](https://sswahn.github.io/stackline/)
+
+![mockup](https://www.dropbox.com/scl/fi/7rtx9gs1wksiadv36qzsi/stackline_assessment_mockup_2021.png?rlkey=2s6i8rm1lumj2fyx0c9yhfmcn&raw=1)
 
 ## 🛠️ Technologies
 - **React**: The powerhouse behind the UI magic.

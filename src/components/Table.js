@@ -28,10 +28,9 @@ const Table = ({ data }) => {
   }
 
   const sortData = id => {
-    const isWeekEnding = id === 'weekEnding'
     return [...data].sort((a, b) => {
-      const aVal = isWeekEnding ? new Date(a[id]).getTime() : a[id]
-      const bVal = isWeekEnding ? new Date(b[id]).getTime() : b[id]
+      const aVal = id === 'weekEnding' ? new Date(a[id]).getTime() : a[id]
+      const bVal = id === 'weekEnding' ? new Date(b[id]).getTime() : b[id]
       return isDescending ? bVal - aVal : aVal - bVal
     })
   }

@@ -53,15 +53,8 @@ const Table = ({ data }) => {
     setState(formatData(data))
   }, [data])
 
-  useEffect(() => {
-    tableContainerRef.current.addEventListener('scroll', handleScrollEffect)
-    return () => {
-      tableContainerRef.current.removeEventListener('scroll', handleScrollEffect)
-    }
-  }, [])
-
   return (
-    <section className="retail-table panel" ref={tableContainerRef}>
+    <section className="retail-table panel" ref={tableContainerRef} onScroll={handleScrollEffect}>
       <table>
         <thead>
           <tr>

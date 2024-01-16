@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import Caret from './Caret'
 
 const Table = ({ data }) => {
@@ -6,7 +6,6 @@ const Table = ({ data }) => {
   const [sortKey, setSortKey] = useState(undefined)
   const [isDescending, setIsDescending] = useState(true)
   const [isScrolling, setIsScrolling] = useState(false)
-  const tableContainerRef = useRef(null)
 
   const formatDate = date => {
     const [year, month, day] = date.split('-')
@@ -45,8 +44,8 @@ const Table = ({ data }) => {
     setSortKey(id)
   }
 
-  const handleScrollEffect = () => {
-    setIsScrolling(tableContainerRef.current.scrollTop > 0)
+  const handleScrollEffect = event => {
+    setIsScrolling(event.target.scrollTop > 0)
   }
 
   useEffect(() => {

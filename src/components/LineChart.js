@@ -13,9 +13,8 @@ const LineChartComponent = ({ data }) => {
     retailerMargin: false
   })
   
-  const handleDropdown = event => {
-    const type = event.currentTarget.dataset.id
-    setShowSales(prevState => ({ ...prevState, [type]: !prevState[type] }))
+  const handleDropdown = ({ currentTarget: { dataset: { id } } }) => {
+    setShowSales(prevState => ({ ...prevState, [id]: !prevState[id] }))
   }
 
   const adjustYAxisHeight = () => {

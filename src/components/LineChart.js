@@ -13,7 +13,8 @@ const LineChartComponent = ({ data }) => {
     retailerMargin: false
   })
   
-  const handleDropdown = ({ currentTarget: { dataset: { id } } }) => {
+  const handleDropdown = event => {
+    const id = event.currentTarget.dataset.id
     setShowSales(prevState => ({ ...prevState, [id]: !prevState[id] }))
   }
 

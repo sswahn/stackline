@@ -53,7 +53,7 @@ const Table = ({ data }) => {
   }, [data])
 
   return (
-    <section className="retail-table panel" ref={tableContainerRef} onScroll={handleScrollEffect}>
+    <section className="retail-table panel" onScroll={handleScrollEffect}>
       <table>
         <thead>
           <tr>

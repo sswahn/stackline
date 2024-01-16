@@ -27,10 +27,14 @@ const Table = ({ data }) => {
     }))
   }
 
+  const formatSort = (id, value) => {
+    return id === 'weekEnding' ? new Date(value[id]).getTime() : value[id]
+  }
+
   const sortData = id => {
     return [...data].sort((a, b) => {
-      const aVal = id === 'weekEnding' ? new Date(a[id]).getTime() : a[id]
-      const bVal = id === 'weekEnding' ? new Date(b[id]).getTime() : b[id]
+      const aVal = formatSort(id, a)
+      const bVal = formatSort(id, b)
       return isDescending ? bVal - aVal : aVal - bVal
     })
   }

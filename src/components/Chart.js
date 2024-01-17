@@ -32,6 +32,22 @@ const Chart = ({ data }) => {
     adjustYAxisHeight()
   }, [data])
   */
+
+    // Calculate Y-axis heights for stacking
+  const calculateYAxisHeights = () => {
+    const yAxisHeights = {}
+    let yOffset = 0
+
+    Object.keys(showSales).forEach(key => {
+      yAxisHeights[key] = yOffset;
+      yOffset += 100; // Adjust this value based on your preference for spacing
+    })
+
+    return yAxisHeights
+  }
+
+  const yAxisHeights = calculateYAxisHeights()
+
   
   return (
     <section className="retail-chart panel">
@@ -40,23 +56,23 @@ const Chart = ({ data }) => {
       <ResponsiveContainer height={475}>
         <LineChart data={data}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} yAxisId="retailSales" />
-          <YAxis hide={true} yAxisId="retailSales" domain={[0, 'dataMax']} />
+          <YAxis hide={true} yAxisId="retailSales" domain={[yAxisHeights[key], yAxisHeights[key] + 100]} />
           {showSales.wholesaleSales && (
             <>
               <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} yAxisId="wholesaleSales" />
-              <YAxis hide={true} yAxisId="wholesaleSales" domain={[0, 'dataMax']} />
+              <YAxis hide={true} yAxisId="wholesaleSales" domain={[yAxisHeights.wholesaleSales, yAxisHeights.wholesaleSales + 100]} />
             </>
           )}
           {showSales.unitsSold && (
             <>
               <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} yAxisId="unitsSold" />
-              <YAxis hide={true} yAxisId="unitsSold" domain={[0, 'dataMax']} />
+              <YAxis hide={true} yAxisId="unitsSold" domain={[yAxisHeights.unitsSold, yAxisHeights.unitsSold + 100]} />
             </>
           )}
           {showSales.retailerMargin && (
             <>
               <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} yAxisId="retailerMargin" />
-              <YAxis hide={true} yAxisId="retailerMargin" domain={[0, 'dataMax']} />
+              <YAxis hide={true} yAxisId="retailerMargin" domain={[yAxisHeights.retailerMargin, yAxisHeights.retailerMargin + 100]} />
             </>  
           )}
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />

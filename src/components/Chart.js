@@ -56,7 +56,7 @@ const Chart = ({ data }) => {
         stacked: true,
         display: false,
         grid: {
-          display: false, // Hide y-axis grid lines
+          display: false
         }
       }
     },
@@ -67,6 +67,9 @@ const Chart = ({ data }) => {
       point: {
         radius: 0
       }
+    },
+    legend: {
+      display: false
     }
   }
 

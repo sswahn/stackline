@@ -3,8 +3,8 @@ export const config = {
     'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'
   ],
   sales: {
-    wholesale: 'Wholesale Sales',
-    units: 'Units Sold',
-    margin: 'Retailer Margin'
+    wholesaleSales: 'Wholesale Sales',
+    unitsSold: 'Units Sold',
+    retailerMargin: 'Retailer Margin'
   }
 }

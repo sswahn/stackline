@@ -43,6 +43,7 @@ const Chart = ({ data }) => {
   const options = {
     scales: {
       x: {
+        display: false,
         grid: {
           display: false
         },
@@ -70,6 +71,11 @@ const Chart = ({ data }) => {
       <h3>Retail Sales</h3>
       <Dropdown onClick={handleDropdown} selected={showSales} />
       <Line data={formattedData} options={options} />
+      <div className="months">
+        <div>
+          {config.months.map(month => <span key={month}>{month}</span>)}
+        </div>
+      </div>
     </section>
   )
 }

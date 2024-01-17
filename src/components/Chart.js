@@ -32,23 +32,6 @@ const Chart = ({ data }) => {
     adjustYAxisHeight()
   }, [data])
   
-
-    // Calculate Y-axis heights for stacking
-  const calculateYAxisHeights = () => {
-    const yAxisHeights = {}
-    let yOffset = 0
-
-    Object.keys(showSales).forEach(key => {
-      yAxisHeights[key] = yOffset
-      yOffset += 100 // Adjust this value based on your preference for spacing
-    })
-
-    return yAxisHeights
-  }
-
-  const yAxisHeights = calculateYAxisHeights()
-
-  
   return (
     <section className="retail-chart panel">
       <h3>Retail Sales</h3>
@@ -66,7 +49,7 @@ const Chart = ({ data }) => {
           {showSales.unitsSold && (
             <>
               <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} yAxisId="unitsSold" />
-              <YAxis hide={true} yAxisId="unitsSold" domain={[adjustedBase, adjustedHeight]} />
+              <YAxis hide={true} yAxisId="unitsSold" domain={[adjustedBase, adjustedHeight - 100]} />
             </>
           )}
           {showSales.retailerMargin && (

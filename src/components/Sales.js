@@ -17,7 +17,7 @@ const Sales = () => {
     retailerMargin: item.retailerMargin / totalMonetaryValue * 100
   }))
   
-  const maxPercentage = Math.max(...percentages.map(item => Object.values(rest)).flat())
+  const maxPercentage = Math.max(...percentages.map(item => Object.values(item)).flat())
   
   const normalizedData = percentages.map((item, index) => ({
     retailSales: item.retailSales / maxPercentage,

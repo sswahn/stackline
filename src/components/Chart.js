@@ -89,7 +89,7 @@ const Chart = ({ data }) => {
   }
 
   useEffect(() => {
-    formatData()
+    setState(formatData())
   }, [])
 
   return (

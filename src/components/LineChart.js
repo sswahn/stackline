@@ -30,13 +30,30 @@ const LineChartComponent = ({ data }) => {
   useEffect(() => {
     adjustYAxisHeight()
   }, [data])
+
+  const stackLines = (lines) => {
+    let offset = 0
+    return lines.map((line) => {
+      const stackedLine = line.map((entry) => {
+        return { ...entry, retailSales: entry.retailSales + offset }
+      })
+      offset += 50; // Adjust this value to control the vertical stacking distance
+      return stackedLine
+    })
+  }
+
+  const stackedData = stackLines([
+    showSales.wholesale && data.map((item) => ({ ...item, retailSales: item.wholesaleSales })),
+    showSales.unitsSold && data.map((item) => ({ ...item, retailSales: item.unitsSold })),
+    showSales.retailerMargin && data.map((item) => ({ ...item, retailSales: item.retailerMargin })),
+  ]).flat()
    
   return (
     <section className="retail-chart panel">
       <h3>Retail Sales</h3>
       <Dropdown onClick={handleDropdown} selected={showSales} />
       <ResponsiveContainer height={475}>
-        <LineChart data={data}>
+        <LineChart data={stackedData}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} stackId="sales" />
           {showSales.wholesale && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="sales" />}
           {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="sales" />}

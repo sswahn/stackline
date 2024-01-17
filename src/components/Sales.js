@@ -26,18 +26,11 @@ const Sales = () => {
     retailerMargin: item.retailerMargin / maxPercentage
   }))
 
-  const formatChartData = [{
-    retailSales: normalizedData.map(item => item.retailSales),
-    wholesaleSales: normalizedData.map(item => item.wholesaleSales),
-    unitsSold: normalizedData.map(item => item.unitsSold),
-    retailerMargin: normalizedData.map(item => item.retailerMargin)
-  }]
-
   return (
     <div className="retail-sales">
       <Sidebar data={data} />
       <div>
-        <LineChart data={formatChartData} /> 
+        <LineChart data={normalizedData} /> 
         <Table data={sales} />
       </div>
     </div>

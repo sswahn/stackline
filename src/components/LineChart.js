@@ -37,21 +37,12 @@ const LineChartComponent = ({ data }) => {
     <section className="retail-chart panel">
       <h3>Retail Sales</h3>
       <Dropdown onClick={handleDropdown} selected={showSales} />
-              <LineChart data={data}>
-          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />
-          <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />
-          {/*showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="sales" isAnimationActive={false} />}
-          {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="sales" isAnimationActive={false} />*/}
-          <YAxis hide={true} />
-          <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />
-          {/*<Tooltip content={<CustomTooltip />} /> */}
-        </LineChart>
       <ResponsiveContainer height={475}>
         <LineChart data={data}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />
-          <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />
-          {/*showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="sales" isAnimationActive={false} />}
-          {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="sales" isAnimationActive={false} />*/}
+          {showSales.wholesaleSales<Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />
+          {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="sales" isAnimationActive={false} />}
+          {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="sales" isAnimationActive={false} />}
           <YAxis hide={true} />
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />
           {/*<Tooltip content={<CustomTooltip />} /> */}

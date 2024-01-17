@@ -61,9 +61,15 @@ const Chart = ({ data }) => {
       labels: config.months,
       datasets: [
         {
-          label: 'retailSales',
-          data: data.map(item => item.retailSales),
-          borderColor: '#44A8F6',
+          label: 'retailerMargin',
+          data: data.map(item => item.retailerMargin),
+          borderColor: '#Eb44F6',
+          borderWidth: 4
+        }, 
+        {
+          label: 'unitsSold',
+          data: data.map(item => item.unitsSold),
+          borderColor: '#F69244',
           borderWidth: 4
         },
         {
@@ -73,18 +79,12 @@ const Chart = ({ data }) => {
           borderWidth: 4
         },
         {
-          label: 'unitsSold',
-          data: data.map(item => item.unitsSold),
-          borderColor: '#F69244',
+          label: 'retailSales',
+          data: data.map(item => item.retailSales),
+          borderColor: '#44A8F6',
           borderWidth: 4
-        },
-        {
-          label: 'retailerMargin',
-          data: data.map(item => item.retailerMargin),
-          borderColor: '#Eb44F6',
-          borderWidth: 4
-        }      
-      ].reverse()
+        }
+      ]
     }
   }
 

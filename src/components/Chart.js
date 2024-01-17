@@ -52,7 +52,7 @@ const options = {
 const Chart = ({ data }) => {
   const [state, setState] = useState({})
   const [showSales, setShowSales] = useState({
-    wholesale: false,
+    wholesaleSales: false,
     unitsSold: false,
     retailerMargin: false
   })
@@ -69,19 +69,19 @@ const Chart = ({ data }) => {
       datasets: [
         {
           label: 'retailerMargin',
-          data: data.map(item => item.retailerMargin),
+          data: showSales.retailerMargin ? data.map(item => item.retailerMargin) : [],
           borderColor: '#Eb44F6',
           borderWidth: 4
         }, 
         {
           label: 'unitsSold',
-          data: data.map(item => item.unitsSold),
+          data: showSales.unitsSold ? data.map(item => item.unitsSold) : [],
           borderColor: '#F69244',
           borderWidth: 4
         },
         {
           label: 'wholesaleSales',
-          data: data.map(item => item.wholesaleSales),
+          data: showSales.wholesaleSales ? data.map(item => item.wholesaleSales) : [],
           borderColor: '#9AA5BF',
           borderWidth: 4
         },

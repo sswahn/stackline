@@ -10,22 +10,18 @@ const Chart = ({ data }) => {
     labels: config.months,
     datasets: [
       {
-        id: 'retailSales',
         label: 'retailSales',
         data: data.map(item => item.retailSales)
       },
       {
-        id: 'wholesaleSales',
         lable: 'wholesaleSales',
         data: data.map(item => item.wholesaleSales)
       },
       {
-        id: 'unitsSold',
         lable: 'unitsSold',
         data: data.map(item => item.unitsSold)
       },
       {
-        id: 'retailerMargin',
         lable: 'retailerMargin',
         data: data.map(item => item.retailerMargin)
       }      
@@ -47,7 +43,7 @@ const Chart = ({ data }) => {
   }
 
   return (
-    <Line datasetIdKey="id" data={formattedData} options={options} />
+    <Line data={formattedData} options={options} />
   )
 }
 

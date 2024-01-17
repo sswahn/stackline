@@ -21,7 +21,7 @@ const Sales = () => {
   }))
 
   console.log('percentages: ', percentages)
-  const {weekEnding, ...rest} = percentages
+  const [weekEnding, ...rest] = percentages
   
   const maxPercentage = Math.max(...rest.map(item => Object.values(item)).flat()) //.filter(x => x !== 0))
 

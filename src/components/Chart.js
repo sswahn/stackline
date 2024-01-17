@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { config } from '../config'
 import { Line } from 'react-chartjs-2'
 import 'chart.js/auto'
+import Dropdown from './Dropdown'
 
 const Chart = ({ data }) => {
   const [showSales, setShowSales] = useState({

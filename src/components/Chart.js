@@ -14,6 +14,8 @@ const options = {
       },
     },
     y: {
+      min: 35,
+      max: 1100,
       stacked: true,
       display: false,
       grid: {

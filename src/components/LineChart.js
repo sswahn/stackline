@@ -54,7 +54,7 @@ const LineChartComponent = ({ data }) => {
           {showSales.retailerMargin && (
             <>
               <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="sales" yAxisId="margin" />
-              <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} yAxisId="retailerMargin" />
+              <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} yAxisId="margin" />
             </>
           )}
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />

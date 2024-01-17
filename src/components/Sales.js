@@ -7,6 +7,11 @@ const Sales = () => {
   const { sales, ...rest } = useSelector(state => state.data.retailSales).at(0)
   const totalMonetaryValue = sales.reduce((acc, val) => acc + val.retailSales + val.wholesaleSales + val.retailerMargin, 0)
   const totalUnitsSold = sales.reduce((acc, val) => acc + val.unitsSold, 0)
+
+  console.log('sales: ', sales)
+  console.log('totalMonetaryValue: ', totalMonetaryValue)
+  console.log('totalUnitsSold: ', totalUnitsSold)
+  
   const percentages = sales.map(item => ({
     weekEnding: item.weekEnding,
     retailSales: item.retailSales / totalMonetaryValue * 100,
@@ -14,6 +19,8 @@ const Sales = () => {
     unitsSold: item.unitsSold / totalUnitsSold * 100,
     retailerMargin: item.retailerMargin / totalMonetaryValue * 100
   }))
+
+  console.log('percentages: ', percentages)
 
   const maxPercentage = Math.max(...percentages.map(item => Object.values(item)).flat())
 

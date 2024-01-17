@@ -25,6 +25,7 @@ const Sales = () => {
     unitsSold: item.unitsSold / maxPercentage,
     retailerMargin: item.retailerMargin / maxPercentage
   }))
+  
 
   return (
     <div className="retail-sales">

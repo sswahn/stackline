@@ -13,15 +13,15 @@ const Chart = ({ data }) => {
         data: data.map(item => item.retailSales)
       },
       {
-        lable: 'wholesaleSales',
+        label: 'wholesaleSales',
         data: data.map(item => item.wholesaleSales)
       },
       {
-        lable: 'unitsSold',
+        label: 'unitsSold',
         data: data.map(item => item.unitsSold)
       },
       {
-        lable: 'retailerMargin',
+        label: 'retailerMargin',
         data: data.map(item => item.retailerMargin)
       }      
     ]

@@ -97,7 +97,7 @@ const Chart = ({ data }) => {
 
   useEffect(() => {
     setState(formatData())
-  }, [])
+  }, [data, showSales])
 
   return (
     <section className="retail-chart panel">

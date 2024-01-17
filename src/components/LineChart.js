@@ -4,7 +4,7 @@ import { config } from '../config'
 import Dropdown from './Dropdown'
 import CustomTooltip from './CustomTooltip'
 
-const LineChartComponent = ({ data }) => {
+const Chart = ({ data }) => {
   const [adjustedBase, setAdjustedBase] = useState([])
   const [adjustedPeak, setAdjustedPeak] = useState([])
   const [showSales, setShowSales] = useState({
@@ -56,4 +56,4 @@ const LineChartComponent = ({ data }) => {
   )
 }
 
-export default LineChartComponent
+export default Chart

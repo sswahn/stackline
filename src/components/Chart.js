@@ -4,6 +4,40 @@ import { Line } from 'react-chartjs-2'
 import 'chart.js/auto'
 import Dropdown from './Dropdown'
 
+const options = {
+  scales: {
+    x: {
+      display: false,
+      grid: {
+        display: false
+      },
+    },
+    y: {
+      stacked: true,
+      display: false,
+      grid: {
+        display: false
+      }
+    }
+  },
+  elements: {
+    line: {
+      tension: 0.1
+    },
+    point: {
+      radius: 0
+    }
+  },
+  plugins: {
+    legend: {
+      display: false
+    },
+    tooltip: {
+      enabled: true
+    }
+  }
+}
+
 const Chart = ({ data }) => {
   const [showSales, setShowSales] = useState({
     wholesale: false,
@@ -44,40 +78,6 @@ const Chart = ({ data }) => {
   }
 
   console.log('formattedData: ', formattedData)
-
-  const options = {
-    scales: {
-      x: {
-        display: false,
-        grid: {
-          display: false
-        },
-      },
-      y: {
-        stacked: true,
-        display: false,
-        grid: {
-          display: false
-        }
-      }
-    },
-    elements: {
-      line: {
-        tension: 0.1
-      },
-      point: {
-        radius: 0
-      }
-    },
-    plugins: {
-      legend: {
-        display: false
-      },
-      tooltip: {
-        enabled: true
-      }
-    }
-  }
 
   return (
     <section className="retail-chart panel">

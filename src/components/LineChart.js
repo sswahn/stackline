@@ -44,7 +44,7 @@ const LineChartComponent = ({ data }) => {
           {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="1" />}
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="1" />}
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />
-          {/*<Tooltip content={<CustomTooltip />} /> */}
+          <Tooltip content={<CustomTooltip />} />
         </LineChart>
       </ResponsiveContainer>
       <div className="months">

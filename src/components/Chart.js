@@ -14,8 +14,6 @@ const options = {
       },
     },
     y: {
-      min: 35,
-      max: 1100,
       stacked: true,
       display: false,
       grid: {
@@ -43,6 +41,9 @@ const options = {
   tooltips: {
     mode: 'index',
     intersect: false
+  },
+  layout: {
+    padding: 35
   }
 }
 

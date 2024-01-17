@@ -40,7 +40,7 @@ const LineChartComponent = ({ data }) => {
       <ResponsiveContainer height={475}>
         <LineChart data={data}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />
-          {showSales.wholesaleSales<Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />}
+          {showSales.wholesaleSales && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />}
           {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />}
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />}
           <YAxis hide={true} />

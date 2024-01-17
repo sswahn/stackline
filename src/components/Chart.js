@@ -33,8 +33,13 @@ const Chart = ({ data }) => {
     scales: {
       y: {
         stacked: true,
-      },
+      }
     },
+    elements: {
+      line: {
+        tension: 0.4, 
+      }
+    }
   }
 
   return (

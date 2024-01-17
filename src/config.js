@@ -25,8 +25,7 @@ export const config = {
     },
     elements: {
       line: {
-        tension: 0.8,
-        borderSkipped: 35
+        cubicInterpolationMode: 'monotone'
       },
       point: {
         radius: 0

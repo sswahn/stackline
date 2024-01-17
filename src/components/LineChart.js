@@ -8,7 +8,7 @@ const LineChartComponent = ({ data }) => {
   const [adjustedBase, setAdjustedBase] = useState([])
   const [adjustedPeak, setAdjustedPeak] = useState([])
   const [showSales, setShowSales] = useState({
-    wholesale: false,
+    wholesaleSales: false,
     unitsSold: false,
     retailerMargin: false
   })
@@ -39,8 +39,8 @@ const LineChartComponent = ({ data }) => {
       <Dropdown onClick={handleDropdown} selected={showSales} />
       <ResponsiveContainer height={475}>
         <LineChart data={data}>
-          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} stackId="sales" stackOrder={2} isAnimationActive={false} />
-          <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="sales" stackOrder={1} isAnimationActive={false} />
+          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />
+          <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />
           {/*showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="sales" isAnimationActive={false} />}
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="sales" isAnimationActive={false} />*/}
           <YAxis hide={true} />

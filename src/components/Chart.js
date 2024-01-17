@@ -15,7 +15,8 @@ const Chart = ({ data }) => {
     const id = event.currentTarget.dataset.id
     setShowSales(prevState => ({ ...prevState, [id]: !prevState[id] }))
   }
-  
+
+  // move to parent:
   const formattedData = {
     labels: config.months,
     datasets: [
@@ -39,7 +40,7 @@ const Chart = ({ data }) => {
         data: data.map(item => item.retailerMargin),
         borderColor: '#Eb44F6'
       }      
-    ]
+    ].reverse()
   }
 
   console.log('formattedData: ', formattedData)
@@ -71,6 +72,9 @@ const Chart = ({ data }) => {
     plugins: {
       legend: {
         display: false
+      },
+      tooltip: {
+        enabled: true
       }
     }
   }

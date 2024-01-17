@@ -42,8 +42,17 @@ const Chart = ({ data }) => {
 
   const options = {
     scales: {
+      x: {
+        grid: {
+          display: false
+        },
+      },
       y: {
         stacked: true,
+        display: false,
+        grid: {
+          display: false, // Hide y-axis grid lines
+        }
       }
     },
     elements: {

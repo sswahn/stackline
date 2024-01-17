@@ -37,7 +37,10 @@ const Chart = ({ data }) => {
     },
     elements: {
       line: {
-        tension: 0.4, 
+        tension: 0.4
+      },
+      point: {
+        radius: 0
       }
     }
   }

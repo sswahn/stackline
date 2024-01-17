@@ -43,7 +43,10 @@ const options = {
     intersect: false
   },
   layout: {
-    padding: 35
+    padding: {
+      left: 35,
+      right: 35
+    }
   }
 }
 

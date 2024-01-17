@@ -38,23 +38,23 @@ const LineChartComponent = ({ data }) => {
       <ResponsiveContainer height={475}>
         <LineChart data={data}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} stackId="sales" yAxisId="retail" />
-          <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} yAxisId="retail" />
+          <YAxis hide={true} yAxisId="retail" />
           {showSales.wholesale && (
             <>      
               <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="sales" yAxisId="wholesale" />}
-              <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} yAxisId="wholesale" />
+              <YAxis hide={true} yAxisId="wholesale" />
             </>
           )}
           {showSales.unitsSold && (
             <>
               <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="sales" yAxisId="units" />
-              <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} yAxisId="units" />  
+              <YAxis hide={true} yAxisId="units" />  
             </>
           )}
           {showSales.retailerMargin && (
             <>
               <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="sales" yAxisId="margin" />
-              <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} yAxisId="margin" />
+              <YAxis hide={true} yAxisId="margin" />
             </>
           )}
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />

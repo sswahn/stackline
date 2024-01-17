@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux'
 import Sidebar from './Sidebar'
-import LineChart from './LineChart'
+import Chart from './Chart'
 import Table from './Table'
 
 const Sales = () => {
@@ -30,7 +30,7 @@ const Sales = () => {
     <div className="retail-sales">
       <Sidebar data={data} />
       <div>
-        <LineChart data={normalizedData} /> 
+        <Chart data={normalizedData} /> 
         <Table data={sales} />
       </div>
     </div>

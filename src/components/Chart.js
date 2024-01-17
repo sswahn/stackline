@@ -35,6 +35,10 @@ const options = {
     tooltip: {
       enabled: true
     }
+  },
+  tooltips: {
+    mode: 'index',
+    intersect: false
   }
 }
 
@@ -58,25 +62,25 @@ const Chart = ({ data }) => {
         label: 'retailSales',
         data: data.map(item => item.retailSales),
         borderColor: '#44A8F6',
-        borderWidth: 2
+        borderWidth: 4
       },
       {
         label: 'wholesaleSales',
         data: data.map(item => item.wholesaleSales),
         borderColor: '#9AA5BF',
-        borderWidth: 2
+        borderWidth: 4
       },
       {
         label: 'unitsSold',
         data: data.map(item => item.unitsSold),
         borderColor: '#F69244',
-        borderWidth: 2
+        borderWidth: 4
       },
       {
         label: 'retailerMargin',
         data: data.map(item => item.retailerMargin),
         borderColor: '#Eb44F6',
-        borderWidth: 2
+        borderWidth: 4
       }      
     ].reverse()
   }

@@ -43,7 +43,7 @@ const LineChartComponent = ({ data }) => {
           {showSales.wholesaleSales && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />}
           {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />}
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="1" isAnimationActive={false} />}
-          <YAxis hide={true} />
+          <YAxis hide={true} type="number" />
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />
           {/*<Tooltip content={<CustomTooltip />} /> */}
         </LineChart>

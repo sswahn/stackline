@@ -73,24 +73,7 @@ const Chart = ({ data }) => {
           borderColor: '#Eb44F6',
           borderWidth: 4
         }, 
-        {
-          label: 'unitsSold',
-          data: showSales.unitsSold ? data.map(item => item.unitsSold) : [],
-          borderColor: '#F69244',
-          borderWidth: 4
-        },
-        {
-          label: 'wholesaleSales',
-          data: showSales.wholesaleSales ? data.map(item => item.wholesaleSales) : [],
-          borderColor: '#9AA5BF',
-          borderWidth: 4
-        },
-        {
-          label: 'retailSales',
-          data: data.map(item => item.retailSales),
-          borderColor: '#44A8F6',
-          borderWidth: 4
-        }
+
       ]
     }
   }

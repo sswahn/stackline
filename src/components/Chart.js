@@ -3,7 +3,7 @@ import { Line } from 'react-chartjs-2'
 import { config } from './config'
 
 const Chart = data => {
-  const data = {
+  const formattedData = {
     labels: config.months,
     datasets: data.map((item, index) => ({
       label: item.weekEnding,
@@ -27,7 +27,7 @@ const Chart = data => {
   }
 
   return (
-    <Line data={data} options={options} />
+    <Line data={formattedData} options={options} />
   )
 }
 

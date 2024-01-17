@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { config } from '../config'
 import { Line } from 'react-chartjs-2'
 import 'chart.js/auto'
@@ -43,6 +43,7 @@ const options = {
 }
 
 const Chart = ({ data }) => {
+  const [state, setState] = useState({})
   const [showSales, setShowSales] = useState({
     wholesale: false,
     unitsSold: false,
@@ -55,43 +56,47 @@ const Chart = ({ data }) => {
   }
 
   // move to parent:
-  const formattedData = {
-    labels: config.months,
-    datasets: [
-      {
-        label: 'retailSales',
-        data: data.map(item => item.retailSales),
-        borderColor: '#44A8F6',
-        borderWidth: 4
-      },
-      {
-        label: 'wholesaleSales',
-        data: data.map(item => item.wholesaleSales),
-        borderColor: '#9AA5BF',
-        borderWidth: 4
-      },
-      {
-        label: 'unitsSold',
-        data: data.map(item => item.unitsSold),
-        borderColor: '#F69244',
-        borderWidth: 4
-      },
-      {
-        label: 'retailerMargin',
-        data: data.map(item => item.retailerMargin),
-        borderColor: '#Eb44F6',
-        borderWidth: 4
-      }      
-    ].reverse()
+  const formatData = () => {
+    return {
+      labels: config.months,
+      datasets: [
+        {
+          label: 'retailSales',
+          data: data.map(item => item.retailSales),
+          borderColor: '#44A8F6',
+          borderWidth: 4
+        },
+        {
+          label: 'wholesaleSales',
+          data: data.map(item => item.wholesaleSales),
+          borderColor: '#9AA5BF',
+          borderWidth: 4
+        },
+        {
+          label: 'unitsSold',
+          data: data.map(item => item.unitsSold),
+          borderColor: '#F69244',
+          borderWidth: 4
+        },
+        {
+          label: 'retailerMargin',
+          data: data.map(item => item.retailerMargin),
+          borderColor: '#Eb44F6',
+          borderWidth: 4
+        }      
+      ].reverse()
+    }
   }
 
-  console.log('formattedData: ', formattedData)
+  useEffect(() => {
+    formatData()
+  }, [])
 
   return (
     <section className="retail-chart panel">
       <h3>Retail Sales</h3>
       <Dropdown onClick={handleDropdown} selected={showSales} />
-      <Line data={formattedData} options={options} />
+      <Line data={state} options={options} />
       <div className="months">
         <div>
           {config.months.map(month => <span key={month}>{month}</span>)}

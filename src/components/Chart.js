@@ -57,22 +57,26 @@ const Chart = ({ data }) => {
       {
         label: 'retailSales',
         data: data.map(item => item.retailSales),
-        borderColor: '#44A8F6'
+        borderColor: '#44A8F6',
+        borderWidth: 2
       },
       {
         label: 'wholesaleSales',
         data: data.map(item => item.wholesaleSales),
-        borderColor: '#9AA5BF'
+        borderColor: '#9AA5BF',
+        borderWidth: 2
       },
       {
         label: 'unitsSold',
         data: data.map(item => item.unitsSold),
-        borderColor: '#F69244'
+        borderColor: '#F69244',
+        borderWidth: 2
       },
       {
         label: 'retailerMargin',
         data: data.map(item => item.retailerMargin),
-        borderColor: '#Eb44F6'
+        borderColor: '#Eb44F6',
+        borderWidth: 2
       }      
     ].reverse()
   }

@@ -30,7 +30,7 @@ const Sales = () => {
     <div className="retail-sales">
       <Sidebar data={data} />
       <div>
-        <Chart data={sales} /> 
+        <Chart data={normalizedData} /> 
         <Table data={sales} />
       </div>
     </div>

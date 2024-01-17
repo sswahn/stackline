@@ -24,6 +24,8 @@ const Sales = () => {
 
   const maxPercentage = Math.max(...percentages.map(item => Object.values(item)).flat())
 
+  console.log('maxPercentage: ', maxPercentage)
+
   const normalizedData = percentages.map(item => ({
     weekEnding: item.weekEnding,
     retailSales: item.retailSales / maxPercentage,

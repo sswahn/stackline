@@ -43,7 +43,11 @@ const Chart = ({ data }) => {
   }
 
   return (
-    <Line data={formattedData} options={options} />
+    <section className="retail-chart panel">
+      <h3>Retail Sales</h3>
+      <Dropdown onClick={handleDropdown} selected={showSales} />
+      <Line data={formattedData} options={options} />
+    </section>
   )
 }
 

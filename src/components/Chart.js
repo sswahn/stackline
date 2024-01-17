@@ -39,7 +39,8 @@ const Chart = ({ data }) => {
       <Dropdown onClick={handleDropdown} selected={showSales} />
       <ResponsiveContainer height={475}>
         <LineChart data={data}>
-          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} stackId="1" />
+          <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} yAxisId="retailSales" />
+          <YAxis hide={true} yAxisId="retailSales" domain={[0, 'dataMax']} />
           {showSales.wholesaleSales && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="1" />}
           {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="1" />}
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="1" />}

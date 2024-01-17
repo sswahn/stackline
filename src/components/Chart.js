@@ -1,6 +1,6 @@
 import React from 'react'
 import { Line } from 'react-chartjs-2'
-import { config } from './config'
+import { config } from '../config'
 
 const Chart = data => {
   const formattedData = {

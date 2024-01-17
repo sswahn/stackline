@@ -42,19 +42,19 @@ const LineChartComponent = ({ data }) => {
           {showSales.wholesale && (
             <>      
               <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="sales" yAxisId="wholesale" />}
-              <YAxis hide={true} yAxisId="wholesale" />
+              <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} yAxisId="wholesale" />
             </>
           )}
           {showSales.unitsSold && (
             <>
               <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="sales" yAxisId="units" />
-              <YAxis hide={true} yAxisId="units" />  
+              <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} yAxisId="units" />  
             </>
           )}
           {showSales.retailerMargin && (
             <>
               <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="sales" yAxisId="margin" />
-              <YAxis hide={true} yAxisId="retailerMargin" />
+              <YAxis hide={true} domain={[adjustedBase, adjustedPeak]} yAxisId="retailerMargin" />
             </>
           )}
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />

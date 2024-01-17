@@ -1,9 +1,19 @@
-import React from 'react'
-import 'chart.js/auto';
-import { Line } from 'react-chartjs-2'
+import { useState } from 'react'
 import { config } from '../config'
+import { Line } from 'react-chartjs-2'
+import 'chart.js/auto'
 
 const Chart = ({ data }) => {
+  const [showSales, setShowSales] = useState({
+    wholesale: false,
+    unitsSold: false,
+    retailerMargin: false
+  })
+  
+  const handleDropdown = event => {
+    const id = event.currentTarget.dataset.id
+    setShowSales(prevState => ({ ...prevState, [id]: !prevState[id] }))
+  }
   
   const formattedData = {
     labels: config.months,

@@ -8,13 +8,28 @@ const Chart = ({ data }) => {
   
   const formattedData = {
     labels: config.months,
-    datasets: data.map((item, index) => ({
-      label: item.weekEnding,
-      data: item,
-      fill: true,
-      borderColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 1)`,
-      backgroundColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.5)`,
-    }))
+    datasets: [
+      {
+        id: 'retailSales',
+        label: 'retailSales',
+        data: data.map(item => item.retailSales)
+      },
+      {
+        id: 'wholesaleSales',
+        lable: 'wholesaleSales',
+        data: data.map(item => item.wholesaleSales)
+      },
+      {
+        id: 'unitsSold',
+        lable: 'unitsSold',
+        data: data.map(item => item.unitsSold)
+      },
+      {
+        id: 'retailerMargin',
+        lable: 'retailerMargin',
+        data: data.map(item => item.retailerMargin)
+      }      
+    ]
   }
 
   console.log('formattedData: ', formattedData)

@@ -32,10 +32,6 @@ const Chart = ({ data }) => {
 
   const options = {
     scales: {
-      x: {
-        type: 'linear',
-        position: 'bottom',
-      },
       y: {
         stacked: true,
       },

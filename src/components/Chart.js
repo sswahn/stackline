@@ -103,7 +103,7 @@ const Chart = ({ data }) => {
     <section className="retail-chart panel">
       <h3>Retail Sales</h3>
       <Dropdown onClick={handleDropdown} selected={showSales} />
-      {!!Object.keys(state).length && <Line data={state} options={options} height={100} />}
+      {!!Object.keys(state).length && <Line data={state} options={options} height={120} />}
       <div className="months">
         <div>
           {config.months.map(month => <span key={month}>{month}</span>)}

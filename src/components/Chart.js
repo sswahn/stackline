@@ -22,7 +22,8 @@ const options = {
   },
   elements: {
     line: {
-      tension: 0.1
+      tension: 0.1,
+      borderSkipped: 35
     },
     point: {
       radius: 0

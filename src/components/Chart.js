@@ -5,7 +5,7 @@ import 'chart.js/auto'
 import Dropdown from './Dropdown'
 
 const options = {
-  height: 300,
+  height: 475,
   scales: {
     x: {
       display: false,

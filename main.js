@@ -226,7 +226,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   config: () => (/* binding */ config)\n/* harmony export */ });\nvar config = {\n  months: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],\n  sales: {\n    wholesale: 'Wholesale Sales',\n    units: 'Units Sold',\n    margin: 'Retailer Margin'\n  }\n};\n\n//# sourceURL=webpack://stackline/./src/config.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   config: () => (/* binding */ config)\n/* harmony export */ });\nvar config = {\n  months: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],\n  sales: {\n    wholesaleSales: 'Wholesale Sales',\n    unitsSold: 'Units Sold',\n    retailerMargin: 'Retailer Margin'\n  }\n};\n\n//# sourceURL=webpack://stackline/./src/config.js?");
 
 /***/ }),
 

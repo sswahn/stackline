@@ -8,6 +8,7 @@ const Sales = () => {
   const totalMonetaryValue = sales.reduce((acc, val) => acc + val.retailSales + val.wholesaleSales + val.retailerMargin, 0)
   const totalUnitsSold = sales.reduce((acc, val) => acc + val.unitsSold, 0)
   const percentages = sales.map(item => ({
+    weekEnding: item.weekEnding,
     retailSales: item.retailSales / totalMonetaryValue * 100,
     wholesaleSales: item.wholesaleSales / totalMonetaryValue * 100,
     unitsSold: item.unitsSold / totalUnitsSold * 100,
@@ -17,6 +18,7 @@ const Sales = () => {
   const maxPercentage = Math.max(...percentages.map(item => Object.values(item)).flat())
 
   const normalizedData = percentages.map(item => ({
+    weekEnding: item.weekEnding,
     retailSales: item.retailSales / maxPercentage,
     wholesaleSales: item.wholesaleSales / maxPercentage,
     unitsSold: item.unitsSold / maxPercentage,

@@ -4,7 +4,7 @@ import LineChart from './LineChart'
 import Table from './Table'
 
 const Sales = () => {
-  const { sales, ...rest } = useSelector(state => state.data.retailSales).at(0)
+  const { sales, ...data } = useSelector(state => state.data.retailSales).at(0)
   const totalMonetaryValue = sales.reduce((acc, val) => acc + val.retailSales + val.wholesaleSales + val.retailerMargin, 0)
   const totalUnitsSold = sales.reduce((acc, val) => acc + val.unitsSold, 0)
 
@@ -21,8 +21,9 @@ const Sales = () => {
   }))
 
   console.log('percentages: ', percentages)
-
-  const maxPercentage = Math.max(...percentages.map(item => Object.values(item)).flat().filter(x => x !== 0))
+  const {weekEnding, ...rest} = percentages
+  
+  const maxPercentage = Math.max(...rest.map(item => Object.values(item)).flat()) //.filter(x => x !== 0))
 
   console.log('maxPercentage: ', maxPercentage)
 
@@ -38,7 +39,7 @@ const Sales = () => {
 
   return (
     <div className="retail-sales">
-      <Sidebar data={rest} />
+      <Sidebar data={data} />
       <div>
         <LineChart data={normalizedData} /> 
         <Table data={sales} />

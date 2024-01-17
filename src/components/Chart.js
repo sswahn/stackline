@@ -4,51 +4,6 @@ import { Line } from 'react-chartjs-2'
 import 'chart.js/auto'
 import Dropdown from './Dropdown'
 
-const options = {
-  scales: {
-    x: {
-      display: false,
-      grid: {
-        display: false
-      },
-    },
-    y: {
-      stacked: true,
-      display: false,
-      grid: {
-        display: false
-      }
-    }
-  },
-  elements: {
-    line: {
-      tension: 0.1,
-      borderSkipped: 35
-    },
-    point: {
-      radius: 0
-    }
-  },
-  plugins: {
-    legend: {
-      display: false
-    },
-    tooltip: {
-      enabled: true
-    }
-  },
-  tooltips: {
-    mode: 'index',
-    intersect: false
-  },
-  layout: {
-    padding: {
-      left: 35,
-      right: 35
-    }
-  }
-}
-
 const Chart = ({ data }) => {
   const [state, setState] = useState({})
   const [showSales, setShowSales] = useState({
@@ -73,7 +28,24 @@ const Chart = ({ data }) => {
           borderColor: '#Eb44F6',
           borderWidth: 4
         }, 
-
+        {
+          label: 'unitsSold',
+          data: showSales.unitsSold ? data.map(item => item.unitsSold) : [],
+          borderColor: '#F69244',
+          borderWidth: 4
+        },
+        {
+          label: 'wholesaleSales',
+          data: showSales.wholesaleSales ? data.map(item => item.wholesaleSales) : [],
+          borderColor: '#9AA5BF',
+          borderWidth: 4
+        },
+        {
+          label: 'retailSales',
+          data: data.map(item => item.retailSales),
+          borderColor: '#44A8F6',
+          borderWidth: 4
+        }
       ]
     }
   }
@@ -86,7 +58,7 @@ const Chart = ({ data }) => {
     <section className="retail-chart panel">
       <h3>Retail Sales</h3>
       <Dropdown onClick={handleDropdown} selected={showSales} />
-      {!!Object.keys(state).length && <Line data={state} options={options} height={120} />}
+      {!!Object.keys(state).length && <Line data={state} options={config.options} height={120} />}
       <div className="months">
         <div>
           {config.months.map(month => <span key={month}>{month}</span>)}

@@ -41,9 +41,24 @@ const Chart = ({ data }) => {
         <LineChart data={data}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} yAxisId="retailSales" />
           <YAxis hide={true} yAxisId="retailSales" domain={[0, 'dataMax']} />
-          {showSales.wholesaleSales && <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} stackId="1" />}
-          {showSales.unitsSold && <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} stackId="1" />}
-          {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="1" />}
+          {showSales.wholesaleSales && (
+            <>
+              <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} yAxisId="wholesaleSales" />
+              <YAxis hide={true} yAxisId="wholesaleSales" domain={[0, 'dataMax']} />
+            </>
+          }
+          {showSales.unitsSold && (
+            <>
+              <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} yAxisId="unitsSold" />
+              <YAxis hide={true} yAxisId="unitsSold" domain={[0, 'dataMax']} />
+            </>
+          }
+          {showSales.retailerMargin && (
+            <>
+              <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} yAxisId="retailerMargin" />
+              <YAxis hide={true} yAxisId="retailerMargin" domain={[0, 'dataMax']} />
+            </>  
+          }
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />
           {/* need to fix <Tooltip content={<CustomTooltip />} /> */}
         </LineChart>

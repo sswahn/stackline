@@ -27,7 +27,7 @@ const Sales = () => {
   }))
 
   const formatChartData = [{
-    retailSales: normalizedData.map(item => item.),
+    retailSales: normalizedData.map(item => item.retailSales),
     wholesaleSales: normalizedData.map(item => item.wholesaleSales),
     unitsSold: normalizedData.map(item => item.unitsSold),
     retailerMargin: normalizedData.map(item => item.retailerMargin)

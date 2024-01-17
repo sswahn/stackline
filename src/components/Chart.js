@@ -2,7 +2,7 @@ import React from 'react'
 import { Line } from 'react-chartjs-2'
 import { config } from '../config'
 
-const Chart = data => {
+const Chart = ({ data }) => {
 
   console.log('data: ', data)
   

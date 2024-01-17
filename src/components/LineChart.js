@@ -18,6 +18,7 @@ const LineChartComponent = ({ data }) => {
     setShowSales(prevState => ({ ...prevState, [id]: !prevState[id] }))
   }
 
+  /*
   const adjustYAxisHeight = () => {
     const retailSales = data.map(item => item.retailSales)
     const min = Math.min(...retailSales)
@@ -30,6 +31,7 @@ const LineChartComponent = ({ data }) => {
   useEffect(() => {
     adjustYAxisHeight()
   }, [data])
+  */
   
   return (
     <section className="retail-chart panel">
@@ -43,7 +45,7 @@ const LineChartComponent = ({ data }) => {
           {showSales.retailerMargin && <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} stackId="sales" isAnimationActive={false} />*/}
           <YAxis hide={true} />
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />
-          {/* <Tooltip content={<CustomTooltip />} /> */}
+          <Tooltip content={<CustomTooltip />} />
         </LineChart>
       </ResponsiveContainer>
       <div className="months">

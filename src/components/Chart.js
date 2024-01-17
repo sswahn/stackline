@@ -3,8 +3,6 @@ import { Line } from 'react-chartjs-2'
 import { config } from '../config'
 
 const Chart = ({ data }) => {
-
-  console.log('data: ', data)
   
   const formattedData = {
     labels: config.months,

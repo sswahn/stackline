@@ -68,9 +68,7 @@ const Chart = ({ data }) => {
         radius: 0
       }
     },
-    legend: {
-      display: false
-    }
+    legend: false
   }
 
   return (

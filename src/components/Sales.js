@@ -5,13 +5,22 @@ import Table from './Table'
 
 const Sales = () => {
   const { sales, ...rest } = useSelector(state => state.data.retailSales).at(0)
-  const sumMonetary = sales.reduce((acc, val) => acc + val.retailSales + val.wholesaleSales + val.retailerMargin, 0)
-  const sumQuantity = sales.reduce((acc, val) => acc + val.unitsSold, 0)
-  const normalizedData = sales.map(item => ({
-    retailSales: item.retailSales / sumMonetary * 100,
-    wholesaleSales: item.wholesaleSales / sumMonetary * 100,
-    unitsSold: item.unitsSold / sumQuantity * 100,
-    retailerMargin: item.retailerMargin / sumMonetary * 100
+  const totalMonetaryValue = sales.reduce((acc, val) => acc + val.retailSales + val.wholesaleSales + val.retailerMargin, 0)
+  const totalUnitsSold = sales.reduce((acc, val) => acc + val.unitsSold, 0)
+  const percentages = sales.map(item => ({
+    retailSales: item.retailSales / totalMonetaryValue * 100,
+    wholesaleSales: item.wholesaleSales / totalMonetaryValue * 100,
+    unitsSold: item.unitsSold / totalUnitsSold * 100,
+    retailerMargin: item.retailerMargin / totalMonetaryValue * 100
+  }))
+
+  const maxPercentage = Math.max(...percentages.map(item => Object.values(item)).flat())
+
+  const normalizedData = percentages.map(item => ({
+    retailSales: item.retailSales / max,
+    wholesaleSales: item.wholesaleSales / max,
+    unitsSold: item.unitsSold / max,
+    retailerMargin: item.retailerMargin / max
   }))
 
   console.log('normalizedData: ', normalizedData)

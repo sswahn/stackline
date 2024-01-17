@@ -21,19 +21,23 @@ const Chart = ({ data }) => {
     datasets: [
       {
         label: 'retailSales',
-        data: data.map(item => item.retailSales)
+        data: data.map(item => item.retailSales),
+        borderColor: '#44A8F6'
       },
       {
         label: 'wholesaleSales',
-        data: data.map(item => item.wholesaleSales)
+        data: data.map(item => item.wholesaleSales),
+        borderColor: '#9AA5BF'
       },
       {
         label: 'unitsSold',
-        data: data.map(item => item.unitsSold)
+        data: data.map(item => item.unitsSold),
+        borderColor: '#F69244'
       },
       {
         label: 'retailerMargin',
-        data: data.map(item => item.retailerMargin)
+        data: data.map(item => item.retailerMargin),
+        borderColor: '#Eb44F6'
       }      
     ]
   }

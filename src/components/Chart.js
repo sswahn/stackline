@@ -47,7 +47,7 @@ const Chart = ({ data }) => {
   }
 
   return (
-    <Line data={formattedData} options={options} />
+    <Line datasetIdKey="id" data={formattedData} options={options} />
   )
 }
 

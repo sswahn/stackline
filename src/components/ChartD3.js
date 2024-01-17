@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import * as d3 from 'd3'
 
-const StackedLineChart = ({ data }) => {
+const ChartD3 = ({ data }) => {
   const chartRef = useRef()
 
   useEffect(() => {
@@ -57,4 +57,4 @@ const StackedLineChart = ({ data }) => {
   return <svg ref={chartRef}></svg>
 }
 
-export default StackedLineChart
+export default ChartD3

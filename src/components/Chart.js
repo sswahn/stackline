@@ -7,6 +7,7 @@ import CustomTooltip from './CustomTooltip'
 const Chart = ({ data }) => {
   const [adjustedBase, setAdjustedBase] = useState(0)
   const [adjustedHeight, setAdjustedHeight] = useState(0)
+  const [padding, setPadding] = useState({})
   const [showSales, setShowSales] = useState({
     wholesaleSales: false,
     unitsSold: false,
@@ -28,13 +29,20 @@ const Chart = ({ data }) => {
     setAdjustedHeight(max + (max - min) * (1 - range))
   }
 
-  const totalPadding = 200 + 190 + 155 + 35
-  const padding = {
-    retailSales: (200 / totalPadding) * 100,
-    wholesaleSales: (190 / totalPadding) * 100,
-    unitsSold: (155 / totalPadding) * 100,
-    retailerMargin: (35 / totalPadding) * 100
+  const setLinePadding = () => {
+    const totalPadding = 200 + 190 + 155 + 35
+    const padding = {
+      retailSales: (200 / totalPadding) * 100,
+      wholesaleSales: (190 / totalPadding) * 100,
+      unitsSold: (155 / totalPadding) * 100,
+      retailerMargin: (35 / totalPadding) * 100
+    }
+    setPadding(padding)
   }
+
+  useEffect(() => {
+    setLinePadding()
+  }, [showSales])
 
   useEffect(() => {
     adjustYAxisHeight()

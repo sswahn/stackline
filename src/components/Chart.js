@@ -35,15 +35,14 @@ const Chart = ({ data }) => {
 
   const setLinePadding = () => {  
     const padding = {}
-    const lines = {
+    const lines = Object.keys({
       'retailSales': true,
       ...showSales
-    }
-    console.log('lines: ', lines)
+    })
+
+    const calculatePadding = index => 150 + 50 * (lines.length - 1 - index)
     
-    const calculatePadding = index => 150 + 50 * index
-    
-    Object.keys(lines).forEach((line, index) => {
+    lines.forEach((line, index) => {
       console.log('line in loop: ', line)
       padding[line] = calculatePadding(index)
       console.log('padding[line]: ', padding[line])

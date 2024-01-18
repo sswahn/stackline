@@ -47,30 +47,33 @@ const Chart = ({ data }) => {
   }
 
   const adjustVisibleLines = () => {
-    const visibleLines = Object.keys(showSales).filter(key => showSales[key])
-    const totalPadding = 200 + 190 + 155 + 35
+    const visibleLines = Object.keys(showSales).filter(key => showSales[key]);
+    const totalPadding = 200 + 190 + 155 + 35;
   
     if (visibleLines.length === 1) {
-      // Handle single line case (either Option 1 or Option 2, as discussed previously)
-      const singleLinePadding = 100; // Option 1: Set 100% padding
-      // const singleLinePadding = (totalPadding / 2) / totalPadding * 100; // Option 2: Dynamic calculation
+      const singleLine = visibleLines[0];
+      const remainingLines = totalPadding - 100; // 100 accounts for the single line's padding
+      const remainingPadding = remainingLines / (visibleLines.length - 1);
   
       setPadding((prevPadding) => ({
         ...prevPadding,
-        [visibleLines[0]]: singleLinePadding,
+        [singleLine]: 100, // Single line sits lower
         ...Object.fromEntries(
-          visibleLines.map(key => [key, (0 / totalPadding) * 100]) // Set other lines' padding to 0
+          visibleLines.filter(key => key !== singleLine).map(key => [
+            key,
+            (remainingPadding / totalPadding) * 100, // Distribute remaining padding among other lines
+          ])
         ),
-      }))
+      }));
     } else {
-      const defaultPadding = totalPadding / visibleLines.length
+      const defaultPadding = totalPadding / visibleLines.length;
       setPadding((prevPadding) => ({
         ...prevPadding,
-        ...Object.fromEntries(visibleLines.map(key => [key, (defaultPadding / totalPadding) * 100]))
+        ...Object.fromEntries(visibleLines.map(key => [key, (defaultPadding / totalPadding) * 100])),
       }))
     }
   }
-
+  
   useEffect(() => {
     setLinePadding()
     adjustVisibleLines()

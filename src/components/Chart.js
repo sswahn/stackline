@@ -40,7 +40,7 @@ const Chart = ({ data }) => {
       ...showSales
     })
 
-    const calculatePadding = index => 150 + 50 * (lines.length - 1 - index)
+    const calculatePadding = index => 150 + (lines.length > 1 ? 50 : 0) * (lines.length - 1 - index)
     
     lines.forEach((line, index) => {
       console.log('line in loop: ', line)

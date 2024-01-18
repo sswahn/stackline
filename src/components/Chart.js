@@ -35,7 +35,11 @@ const Chart = ({ data }) => {
 
   const setLinePadding = () => {  
     const padding = {}
-    const visibleLines = Object.keys(showSales).filter(key => showSales[key])
+    const lines = {
+      'retailSales': true,
+      ...showSales
+    }
+    const visibleLines = Object.keys(lines).filter(key => showSales[key])
     const calculatePadding = index => 150 + 50 * index
     visibleLines.forEach((line, index) => {
       padding[line] = calculatePadding(index)

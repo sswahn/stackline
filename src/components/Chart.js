@@ -28,7 +28,7 @@ const Chart = ({ data }) => {
     const retailSales = data.map(item => item.retailSales)
     const min = Math.min(...retailSales)
     const max = Math.max(...retailSales)
-    const range = 0.2 // Adjust range to control line height
+    const range = 0.3 // Adjust range to control line height
     setAdjustedBase(min - (max - min) * (1 - range))
     setAdjustedHeight(max + (max - min) * (1 - range))
   }
@@ -38,11 +38,12 @@ const Chart = ({ data }) => {
     const dynamicLines = Object.keys(showSales).filter(key => showSales[key])
     const lines = ['retailSales', ...dynamicLines]
     const calculatePadding = index => 150 + (lines.length > 1 ? 50 : 0) * (lines.length - 1 - index)
-    
     lines.forEach((line, index) => {
-      console.log('line in loop: ', line)
-      padding[line] = calculatePadding(index)
-      console.log('padding[line]: ', padding[line])
+      if (line === 'unitsSold') {
+        padding[line] = calculatePadding(index) + 20
+      } else {
+        padding[line] = calculatePadding(index)
+      }
     })
     setPadding(padding)
   }

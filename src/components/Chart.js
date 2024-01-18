@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { config } from '../config'
-import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts'
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from 'recharts'
 import Dropdown from './Dropdown'
-import CustomTooltip from './CustomTooltip'
 
 const Chart = ({ data }) => {
   const [adjustedBase, setAdjustedBase] = useState(0)
@@ -83,7 +82,6 @@ const Chart = ({ data }) => {
             </>  
           )}
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />
-          {/* need to fix <Tooltip content={<CustomTooltip />} /> */}
         </LineChart>
       </ResponsiveContainer>
       <div className="months">

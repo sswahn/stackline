@@ -34,13 +34,31 @@ const Chart = ({ data }) => {
   }
 
   const setLinePadding = () => {  
+    const lineCount = Object.values(showSales).filter(item => item === true).length
     const totalPadding = 200 + 190 + 155 + 35
+    
     const padding = {
       retailSales: (200 / totalPadding) * 100,
       wholesaleSales: (300 / totalPadding) * 100,
       unitsSold: (155 / totalPadding) * 100,
       retailerMargin: (35 / totalPadding) * 100
     }
+
+    // Distribute the remaining padding equally among visible lines
+    const remainingPadding = totalPadding - Object.values(padding).reduce((acc, val) => acc + val, 0)
+  
+    // Only distribute remaining padding if there are visible lines
+    if (lineCount > 0) {
+      const distributedRemainingPadding = remainingPadding / lineCount
+  
+      // Apply the remaining padding to visible lines
+      Object.keys(showSales).forEach(key => {
+        if (showSales[key]) {
+          padding[key] += distributedRemainingPadding
+        }
+      })
+    }
+    
     setPadding(padding)
   }
   

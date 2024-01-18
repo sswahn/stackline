@@ -33,7 +33,7 @@ const Chart = ({ data }) => {
     const totalPadding = 200 + 190 + 155 + 35
     const padding = {
       retailSales: (200 / totalPadding) * 100,
-      wholesaleSales: (195 / totalPadding) * 100,
+      wholesaleSales: (200 / totalPadding) * 100,
       unitsSold: (155 / totalPadding) * 100,
       retailerMargin: (35 / totalPadding) * 100
     }

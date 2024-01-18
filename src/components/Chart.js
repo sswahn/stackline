@@ -88,7 +88,7 @@ const Chart = ({ data }) => {
       <ResponsiveContainer height={475}>
         <LineChart data={data}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} yAxisId="retailSales" />
-          <YAxis hide={true} yAxisId="retailSales" domain={[adjustedBase, adjustedHeight + 5]} padding={{ bottom: padding.retailSales }} />
+          <YAxis hide={true} yAxisId="retailSales" domain={[adjustedBase, adjustedHeight + 2]} padding={{ bottom: padding.retailSales }} />
           {showSales.wholesaleSales && (
             <>
               <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} yAxisId="wholesaleSales" />

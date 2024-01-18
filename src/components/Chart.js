@@ -28,10 +28,12 @@ const Chart = ({ data }) => {
     setAdjustedHeight(max + (max - min) * (1 - range))
   }
 
-  const calculatePercentagePadding = numLines => {
-    const totalPadding = 200 // Total padding when all lines are displayed
-    const percentagePadding = (totalPadding / (numLines * 2)) * 100 // Adjust based on your requirement
-    return percentagePadding
+  const totalPadding = 200 + 190 + 155 + 35
+  const padding = {
+    retailSales: (200 / totalPadding) * 100,
+    wholesaleSales: (190 / totalPadding) * 100,
+    unitsSold: (155 / totalPadding) * 100,
+    retailerMargin: (35 / totalPadding) * 100
   }
 
   useEffect(() => {
@@ -45,23 +47,23 @@ const Chart = ({ data }) => {
       <ResponsiveContainer height={475}>
         <LineChart data={data}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} yAxisId="retailSales" />
-          <YAxis hide={true} yAxisId="retailSales" domain={[adjustedBase, adjustedHeight]} padding={{ bottom: calculatePercentagePadding(Object.values(showSales).filter(Boolean).length) }} />
+          <YAxis hide={true} yAxisId="retailSales" domain={[adjustedBase, adjustedHeight]} padding={{ bottom: padding.retailSales }} />
           {showSales.wholesaleSales && (
             <>
               <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} yAxisId="wholesaleSales" />
-              <YAxis hide={true} yAxisId="wholesaleSales" domain={[adjustedBase, adjustedHeight + 2]} padding={{ bottom: calculatePercentagePadding(Object.values(showSales).filter(Boolean).length) }} />
+              <YAxis hide={true} yAxisId="wholesaleSales" domain={[adjustedBase, adjustedHeight + 2]} padding={{ bottom: padding.wholesaleSales }} />
             </>
           )}
           {showSales.unitsSold && (
             <>
               <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} yAxisId="unitsSold" />
-              <YAxis hide={true} yAxisId="unitsSold" domain={[adjustedBase, adjustedHeight + 10]} padding={{ bottom: calculatePercentagePadding(Object.values(showSales).filter(Boolean).length) }} />
+              <YAxis hide={true} yAxisId="unitsSold" domain={[adjustedBase, adjustedHeight + 10]} padding={{ bottom: padding.unitsSold }} />
             </>
           )}
           {showSales.retailerMargin && (
             <>
               <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} yAxisId="retailerMargin" />
-              <YAxis hide={true} yAxisId="retailerMargin" domain={[adjustedBase, adjustedHeight + 2]} padding={{ bottom: calculatePercentagePadding(Object.values(showSales).filter(Boolean).length) }} />
+              <YAxis hide={true} yAxisId="retailerMargin" domain={[adjustedBase, adjustedHeight + 2]} padding={{ bottom: padding.retailerMargin }} />
             </>  
           )}
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />

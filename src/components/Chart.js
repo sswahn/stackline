@@ -39,9 +39,9 @@ const Chart = ({ data }) => {
     
     const padding = {
       retailSales: calculatePadding(),
-      wholesaleSales: calculatePadding(),
-      unitsSold: calculatePadding(),
-      retailerMargin: calculatePadding()
+      wholesaleSales: calculatePadding() - 150,
+      unitsSold: calculatePadding() - 150 * lineCount,
+      retailerMargin: calculatePadding() - 150 * lineCount
     }
     
     setPadding(padding)

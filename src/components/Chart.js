@@ -40,10 +40,10 @@ const Chart = ({ data }) => {
       ...showSales
     }
     console.log('lines: ', lines)
-    const visibleLines = Object.keys(lines).filter(key => showSales[key])
-    console.log('visibleLines: ', visibleLines)
+    
     const calculatePadding = index => 150 + 50 * index
-    visibleLines.forEach((line, index) => {
+    
+    Object.keys(lines).forEach((line, index) => {
       console.log('line in loop: ', line)
       padding[line] = calculatePadding(index)
       console.log('padding[line]: ', padding[line])

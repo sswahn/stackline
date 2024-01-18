@@ -45,36 +45,9 @@ const Chart = ({ data }) => {
     }
     setPadding(padding)
   }
-
-  const adjustVisibleLines = () => {
-    const visibleLines = Object.keys(showSales).filter(key => showSales[key]);
-    const totalPadding = 200 + 190 + 155 + 35;
-  
-    if (visibleLines.length === 1) {
-      const singleLine = visibleLines[0];
-      const remainingLines = visibleLines.length - 1; // Account for all other lines
-      const remainingPadding = totalPadding - 100; // 100 for single line's padding
-      const defaultPadding = remainingPadding / remainingLines;
-  
-      setPadding((prevPadding) => ({
-        ...prevPadding,
-        ...Object.fromEntries(visibleLines.map(key => [
-          key,
-          key === singleLine ? 100 : (defaultPadding / totalPadding) * 100,
-        ])),
-      }));
-    } else {
-      const defaultPadding = totalPadding / visibleLines.length;
-      setPadding((prevPadding) => ({
-        ...prevPadding,
-        ...Object.fromEntries(visibleLines.map(key => [key, (defaultPadding / totalPadding) * 100])),
-      }))
-    }
-  }
   
   useEffect(() => {
     setLinePadding()
-    adjustVisibleLines()
   }, [showSales])
 
   useEffect(() => {

@@ -36,12 +36,19 @@ const Chart = ({ data }) => {
   const setLinePadding = () => {  
     const lineCount = Object.values(showSales).filter(item => item === true).length
     const totalPadding = 200 + 190 + 155 + 35
+
+    const calculatePadding = val => {
+      if (lineCount > 0) {
+        return ((lineCount * val) / totalPadding) * 100
+      }
+      return 50
+    }
     
     const padding = {
-      retailSales: ((lineCount * 100) / totalPadding) * 100,
-      wholesaleSales: (300 / totalPadding) * 100,
-      unitsSold: (155 / totalPadding) * 100,
-      retailerMargin: (35 / totalPadding) * 100
+      retailSales: calculatePadding(200),
+      wholesaleSales: calculatePadding(200),
+      unitsSold: calculatePadding(155),
+      retailerMargin: calculatePadding(35)
     }
     
     setPadding(padding)

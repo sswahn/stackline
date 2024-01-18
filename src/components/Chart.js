@@ -52,18 +52,16 @@ const Chart = ({ data }) => {
   
     if (visibleLines.length === 1) {
       const singleLine = visibleLines[0];
-      const remainingLines = totalPadding - 100; // 100 accounts for the single line's padding
-      const remainingPadding = remainingLines / (visibleLines.length - 1);
+      const remainingLines = visibleLines.length - 1; // Account for all other lines
+      const remainingPadding = totalPadding - 100; // 100 for single line's padding
+      const defaultPadding = remainingPadding / remainingLines;
   
       setPadding((prevPadding) => ({
         ...prevPadding,
-        [singleLine]: 100, // Single line sits lower
-        ...Object.fromEntries(
-          visibleLines.filter(key => key !== singleLine).map(key => [
-            key,
-            (remainingPadding / totalPadding) * 100, // Distribute remaining padding among other lines
-          ])
-        ),
+        ...Object.fromEntries(visibleLines.map(key => [
+          key,
+          key === singleLine ? 100 : (defaultPadding / totalPadding) * 100,
+        ])),
       }));
     } else {
       const defaultPadding = totalPadding / visibleLines.length;
@@ -90,7 +88,7 @@ const Chart = ({ data }) => {
       <ResponsiveContainer height={475}>
         <LineChart data={data}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} yAxisId="retailSales" />
-          <YAxis hide={true} yAxisId="retailSales" domain={[adjustedBase, adjustedHeight]} padding={{ bottom: padding.retailSales }} />
+          <YAxis hide={true} yAxisId="retailSales" domain={[adjustedBase, adjustedHeight + 5]} padding={{ bottom: padding.retailSales }} />
           {showSales.wholesaleSales && (
             <>
               <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} yAxisId="wholesaleSales" />

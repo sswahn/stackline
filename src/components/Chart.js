@@ -4,8 +4,6 @@ import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'rec
 import Dropdown from './Dropdown'
 import CustomTooltip from './CustomTooltip'
 
-const totalPadding = 200 + 190 + 155 + 35
-
 const Chart = ({ data }) => {
   const [adjustedBase, setAdjustedBase] = useState(0)
   const [adjustedHeight, setAdjustedHeight] = useState(0)
@@ -25,7 +23,6 @@ const Chart = ({ data }) => {
     const id = event.currentTarget.dataset.id
     setShowSales(prevState => ({ ...prevState, [id]: !prevState[id] }))
   }
-
   
   const adjustYAxisHeight = () => {
     const retailSales = data.map(item => item.retailSales)
@@ -37,6 +34,7 @@ const Chart = ({ data }) => {
   }
 
   const setLinePadding = () => {  
+    const totalPadding = 200 + 190 + 155 + 35;
     const padding = {
       retailSales: (200 / totalPadding) * 100,
       wholesaleSales: (300 / totalPadding) * 100,

@@ -30,7 +30,7 @@ const Chart = ({ data }) => {
   }
 
   const setLinePadding = () => {
-    const totalPadding = 200 + 190 + 155 + 35
+    const totalPadding = 200 + 200 + 155 + 35
     const padding = {
       retailSales: (200 / totalPadding) * 100,
       wholesaleSales: (200 / totalPadding) * 100,

@@ -4,6 +4,8 @@ import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'rec
 import Dropdown from './Dropdown'
 import CustomTooltip from './CustomTooltip'
 
+const totalPadding = 200 + 190 + 155 + 35
+
 const Chart = ({ data }) => {
   const [adjustedBase, setAdjustedBase] = useState(0)
   const [adjustedHeight, setAdjustedHeight] = useState(0)
@@ -34,9 +36,8 @@ const Chart = ({ data }) => {
     setAdjustedHeight(max + (max - min) * (1 - range))
   }
 
-  const setLinePadding = () => {
-    const totalPadding = 200 + 190 + 155 + 35
-   const padding = {
+  const setLinePadding = () => {  
+    const padding = {
       retailSales: (200 / totalPadding) * 100,
       wholesaleSales: (300 / totalPadding) * 100,
       unitsSold: (155 / totalPadding) * 100,

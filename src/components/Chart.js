@@ -43,7 +43,7 @@ const Chart = ({ data }) => {
           {showSales.wholesaleSales && (
             <>
               <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} yAxisId="wholesaleSales" />
-              <YAxis hide={true} yAxisId="wholesaleSales" domain={[adjustedBase, adjustedHeight + 10]} padding={{ bottom: 150 }} />
+              <YAxis hide={true} yAxisId="wholesaleSales" domain={[adjustedBase, adjustedHeight + 5]} padding={{ bottom: 150 }} />
             </>
           )}
           {showSales.unitsSold && (
@@ -55,7 +55,7 @@ const Chart = ({ data }) => {
           {showSales.retailerMargin && (
             <>
               <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} yAxisId="retailerMargin" />
-              <YAxis hide={true} yAxisId="retailerMargin" domain={[adjustedBase, adjustedHeight + 10]} padding={{ bottom: 50 }} />
+              <YAxis hide={true} yAxisId="retailerMargin" domain={[adjustedBase, adjustedHeight + 5]} padding={{ bottom: 50 }} />
             </>  
           )}
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />

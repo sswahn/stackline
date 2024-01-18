@@ -48,12 +48,23 @@ const Chart = ({ data }) => {
 
   const adjustVisibleLines = () => {
     const visibleLines = Object.keys(showSales).filter(key => showSales[key])
+    const totalPadding = 200 + 190 + 155 + 35
+  
     if (visibleLines.length === 1) {
-      const visibleLine = visibleLines[0]
-      setPadding((prevPadding) => ({ ...prevPadding, [visibleLine]: 100 }))
+      // Handle single line case (either Option 1 or Option 2, as discussed previously)
+      const singleLinePadding = 100; // Option 1: Set 100% padding
+      // const singleLinePadding = (totalPadding / 2) / totalPadding * 100; // Option 2: Dynamic calculation
+  
+      setPadding((prevPadding) => ({
+        ...prevPadding,
+        [visibleLines[0]]: singleLinePadding,
+        ...Object.fromEntries(
+          visibleLines.map(key => [key, (0 / totalPadding) * 100]) // Set other lines' padding to 0
+        ),
+      }))
     } else {
       const defaultPadding = totalPadding / visibleLines.length
-      setPadding(prevPadding => ({
+      setPadding((prevPadding) => ({
         ...prevPadding,
         ...Object.fromEntries(visibleLines.map(key => [key, (defaultPadding / totalPadding) * 100]))
       }))

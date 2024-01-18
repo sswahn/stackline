@@ -35,7 +35,7 @@ const Chart = ({ data }) => {
 
   const setLinePadding = () => {  
     const padding = {}
-    const C = Object.keys(showSales).filter(key => showSales[key] === true)
+    const dynamicLines = Object.keys(showSales).filter(key => showSales[key] === true)
     
     console.log('dynamicLines: ', dynamicLines)
     

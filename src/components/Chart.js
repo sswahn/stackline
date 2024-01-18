@@ -35,7 +35,7 @@ const Chart = ({ data }) => {
 
   const setLinePadding = () => {  
     const lineCount = Object.values(showSales).filter(item => item === true).length
-    const calculatePadding = () => (40 * (lineCount - 1)) + 130 // 100 is the initial padding for the first line. update initial value for more padding
+    const calculatePadding = () => (40 * lineCount) + 130 // 130 is the initial padding for the first line. update initial value for more padding
     
     const padding = {
       retailSales: calculatePadding(),

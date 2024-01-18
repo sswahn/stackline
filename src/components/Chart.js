@@ -7,7 +7,12 @@ import CustomTooltip from './CustomTooltip'
 const Chart = ({ data }) => {
   const [adjustedBase, setAdjustedBase] = useState(0)
   const [adjustedHeight, setAdjustedHeight] = useState(0)
-  const [padding, setPadding] = useState({})
+  const [padding, setPadding] = useState({
+    retailSales: 0,
+    wholesaleSales: 0,
+    unitsSold: 0,
+    retailerMargin: 0
+  })
   const [showSales, setShowSales] = useState({
     wholesaleSales: false,
     unitsSold: false,
@@ -31,7 +36,7 @@ const Chart = ({ data }) => {
 
   const setLinePadding = () => {
     const totalPadding = 200 + 190 + 155 + 35
-    const padding = {
+   const padding = {
       retailSales: (200 / totalPadding) * 100,
       wholesaleSales: (300 / totalPadding) * 100,
       unitsSold: (155 / totalPadding) * 100,
@@ -40,8 +45,23 @@ const Chart = ({ data }) => {
     setPadding(padding)
   }
 
+  const adjustVisibleLines = () => {
+    const visibleLines = Object.keys(showSales).filter(key => showSales[key])
+    if (visibleLines.length === 1) {
+      const visibleLine = visibleLines[0]
+      setPadding((prevPadding) => ({ ...prevPadding, [visibleLine]: 100 }))
+    } else {
+      const defaultPadding = totalPadding / visibleLines.length
+      setPadding(prevPadding => ({
+        ...prevPadding,
+        ...Object.fromEntries(visibleLines.map(key => [key, (defaultPadding / totalPadding) * 100]))
+      }))
+    }
+  }
+
   useEffect(() => {
     setLinePadding()
+    adjustVisibleLines()
   }, [showSales])
 
   useEffect(() => {

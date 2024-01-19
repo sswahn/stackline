@@ -38,11 +38,11 @@ const Chart = ({ data }) => {
     const lines = ['retailSales', ...dynamicLines]
     const calculatePadding = index => {
       // base height + space between * available lines
-      return 5 + (lines.length > 1 ? 150 : 0) * (lines.length - 1 - index)
+      return (lines.length > 1 ? 160 : 0) * (lines.length - 1 - index)
     }
     lines.forEach((line, index) => {
       if (line === 'unitsSold') {
-        padding[line] = calculatePadding(index) + 20
+        padding[line] = calculatePadding(index) //+ 20
       } else {
         padding[line] = calculatePadding(index)
       }

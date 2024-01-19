@@ -43,7 +43,7 @@ const Chart = ({ data }) => {
     console.log('lines: ', lines)
     
     const calculatePadding = index => {
-      return (lines.length > 1 ? 100 : 0) * (lines.length - index)
+      return (lines.length > 1 ? 100 : 0) * (lines.length - index) / index
     }
     lines.forEach((line, index) => {
       /*

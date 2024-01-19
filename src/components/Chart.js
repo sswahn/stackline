@@ -37,7 +37,8 @@ const Chart = ({ data }) => {
     const dynamicLines = Object.keys(showSales).filter(key => showSales[key])
     const lines = ['retailSales', ...dynamicLines]
     const calculatePadding = index => {
-      return (lines.length > 1 ? (30 / lines.length) : 30) + (lines.length > 1 ? 100 : 0) * (lines.length - 1 - index)
+      // base height + space between * available lines
+      return (lines.length > 1 ? (30 / lines.length) : 30) + (lines.length > 1 ? 200 : 0) * (lines.length - 1 - index)
     }
     lines.forEach((line, index) => {
       if (line === 'unitsSold') {

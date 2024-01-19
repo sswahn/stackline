@@ -32,13 +32,13 @@ const Chart = ({ data }) => {
     setAdjustedHeight(max + (max - min) * (1 - range))
   }
 
-  const setLinePadding = () => {  
+  const setLinePadding = () => { 
     const padding = {}
     const dynamicLines = Object.keys(showSales).filter(key => showSales[key])
     const lines = ['retailSales', ...dynamicLines]
-
+    const { length } = lines
     const calculatePadding = index => {
-      return (lines.length > 1 ? 100 : 0) * (lines.length - index)
+      return (length > 1 ? (100 * length / (index + 1)) : 0) //* (length - index)
     }
     
     lines.forEach((line, index) => {

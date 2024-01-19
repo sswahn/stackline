@@ -38,7 +38,7 @@ const Chart = ({ data }) => {
     const lines = ['retailSales', ...dynamicLines]
     const calculatePadding = index => {
       // base height + space between * available lines
-      return (lines.length > 1 ? Math.floor(10 / lines.length) : 10) + (lines.length > 1 ? 200 : 0) * (lines.length - 1 - index)
+      return 5 + (lines.length > 1 ? 150 : 0) * (lines.length - 1 - index)
     }
     lines.forEach((line, index) => {
       if (line === 'unitsSold') {
@@ -75,7 +75,7 @@ const Chart = ({ data }) => {
           {showSales.unitsSold && (
             <>
               <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} yAxisId="unitsSold" />
-              <YAxis hide={true} yAxisId="unitsSold" domain={[adjustedBase, adjustedHeight + 10]} padding={{ bottom: padding.unitsSold }} />
+              <YAxis hide={true} yAxisId="unitsSold" domain={[adjustedBase, adjustedHeight + 5]} padding={{ bottom: padding.unitsSold }} />
             </>
           )}
           {showSales.retailerMargin && (

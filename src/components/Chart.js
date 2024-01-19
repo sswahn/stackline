@@ -62,23 +62,23 @@ const Chart = ({ data }) => {
       <ResponsiveContainer height={475}>
         <LineChart data={data}>
           <Line type="monotone" dataKey="retailSales" stroke="#44A8F6" strokeWidth={4} dot={false} yAxisId="retailSales" />
-          <YAxis hide={true} yAxisId="retailSales" domain={[adjustedBase, adjustedHeight + 2]} padding={{ bottom: padding.retailSales }} />
+          <YAxis hide={true} yAxisId="retailSales" domain={[adjustedBase, adjustedHeight]} padding={{ bottom: padding.retailSales }} />
           {showSales.wholesaleSales && (
             <>
               <Line type="monotone" dataKey="wholesaleSales" stroke="#9AA5BF" strokeWidth={4} dot={false} yAxisId="wholesaleSales" />
-              <YAxis hide={true} yAxisId="wholesaleSales" domain={[adjustedBase, adjustedHeight + 2]} padding={{ bottom: padding.wholesaleSales }} />
+              <YAxis hide={true} yAxisId="wholesaleSales" domain={[adjustedBase, adjustedHeight]} padding={{ bottom: padding.wholesaleSales }} />
             </>
           )}
           {showSales.unitsSold && (
             <>
               <Line type="monotone" dataKey="unitsSold" stroke="#F69244" strokeWidth={4} dot={false} yAxisId="unitsSold" />
-              <YAxis hide={true} yAxisId="unitsSold" domain={[adjustedBase, adjustedHeight + 10]} padding={{ bottom: padding.unitsSold }} />
+              <YAxis hide={true} yAxisId="unitsSold" domain={[adjustedBase, adjustedHeight]} padding={{ bottom: padding.unitsSold }} />
             </>
           )}
           {showSales.retailerMargin && (
             <>
               <Line type="monotone" dataKey="retailerMargin" stroke="#Eb44F6" strokeWidth={4} dot={false} yAxisId="retailerMargin" />
-              <YAxis hide={true} yAxisId="retailerMargin" domain={[adjustedBase, adjustedHeight + 2]} padding={{ bottom: padding.retailerMargin }} />
+              <YAxis hide={true} yAxisId="retailerMargin" domain={[adjustedBase, adjustedHeight]} padding={{ bottom: padding.retailerMargin }} />
             </>  
           )}
           <XAxis hide={true} dataKey="weekEnding" padding={{ left: 35, right: 35 }} />

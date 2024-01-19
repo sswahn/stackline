@@ -27,7 +27,7 @@ const Chart = ({ data }) => {
     const retailSales = data.map(item => item.retailSales)
     const min = Math.min(...retailSales)
     const max = Math.max(...retailSales)
-    const range = 0.6 // Adjust range to control line height
+    const range = 0.5 // Adjust range to control line height
     setAdjustedBase(min - (max - min) * (1 - range))
     setAdjustedHeight(max + (max - min) * (1 - range))
   }

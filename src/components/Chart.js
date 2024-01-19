@@ -52,6 +52,8 @@ const Chart = ({ data }) => {
       } else { */
         
       padding[line] = calculatePadding(index)
+
+      console.log('padding[line]: ', padding[line])
       
     })
     setPadding(padding)
